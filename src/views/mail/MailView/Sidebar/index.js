@@ -49,7 +49,7 @@ const Sidebar = ({ containerRef }) => {
     if (isSidebarOpen) {
       dispatch(closeSidebar());
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, [location.pathname]);
 
   const content = (

@@ -100,7 +100,7 @@ const Thread = () => {
         dispatch(resetActiveThread())
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, [threadKey]);
 
   useEffect(() => {

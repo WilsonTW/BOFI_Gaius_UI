@@ -19,7 +19,7 @@ const Page = forwardRef(({
     track.pageview({
       page_path: location.pathname
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
