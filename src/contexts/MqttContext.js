@@ -79,7 +79,7 @@ const device = {
   pcs: [
     {
       id: 1,
-      topic: '/BOFI/gaius/pcs/1/',
+      topic: '/BOFI/gaius/sp4k/1/',
       qos: 1
     }
     // {
@@ -92,7 +92,7 @@ const device = {
   bms: [
     {
       id: 1,
-      topic: '/BOFI/gaius/bms/1/',
+      topic: '/BOFI/gaius/zdaf/1/',
       qos: 1
     }
     // {
@@ -137,46 +137,74 @@ const device = {
 }; 
 
 const pcsProfile = [
-  "p1","p2","p3","p4","p5","p6","p7","p8","p9","p10","p11","p12","p13","p14","p15","p16"
+  "error0","error1","wMode","bV","bT","acInAcP","acOutV","acOutAcP","acOutF","acOutC","bCap","sInP1","bC","sInV1","maxT","acInToAcP",
+  "acInC","sInC1","acOutAppP","acInV","acInF","acOutPP","innT","status","acOutToP","bP","totGenE","genEnH","genEnD","genEnM","genEnY","saveT",
+  "dateHourE","dateDayE","dateMonE","dateYearE","con1","con2","con3","con4"
 ]; 
 const bmsProfile = [
-  "p1","p2","p3","p4","p5","p6","p7","p8"
+  "vM","v1","v2","v3","v4","v5","v6","v7","v8","v9","v10","v11","v12","v13","v14","v15",
+  "v16","tN","t1","t2","t3","t4","t5","t6","t7","t8","t9","t10","t11","t12","t13","t14",
+  "t15","t16","tA","tV","sAh","tAh","cycle","soc","soh","equal","humidity"
 ]; 
-const plcProfile = [
-  "p1","p2","p3","p4","p5","p6","p7","p8","p9","p10","p11","p12","p13","p14","p15","p16"
-];
-const mpptProfile = [
-  "p1","p2","p3","p4","p5","p6","p7","p8","p9","p10","p11","p12","p13","p14",
-  "p15","p16","p17","p18","p19","p20","p21","p22","p23","p24","p25","p26","p27","p28"
-];
-const inverterProfile = [
-  "p1","p2","p3","p4","p5","p6","p7","p8","p9","p10","p11","p12","p13","p14",
-  "p15","p16","p17","p18","p19","p20","p21","p22"
-];
-const powermeterProfile = [
-  "p1","p2","p3","p4","p5","p6","p7","p8","p9"
-];
+// const plcProfile = [
+//   "p1","p2","p3","p4","p5","p6","p7","p8","p9","p10","p11","p12","p13","p14","p15","p16"
+// ];
+// const mpptProfile = [
+//   "p1","p2","p3","p4","p5","p6","p7","p8","p9","p10","p11","p12","p13","p14",
+//   "p15","p16","p17","p18","p19","p20","p21","p22","p23","p24","p25","p26","p27","p28"
+// ];
+// const inverterProfile = [
+//   "p1","p2","p3","p4","p5","p6","p7","p8","p9","p10","p11","p12","p13","p14",
+//   "p15","p16","p17","p18","p19","p20","p21","p22"
+// ];
+// const powermeterProfile = [
+//   "p1","p2","p3","p4","p5","p6","p7","p8","p9"
+// ];
 
 const initialDeviceState = {
   pcs: [
     {
       id: 1,
-      errorCode: '6030',
-      inverterState1: '6033',
-      inverterState2: '6034',
-      abVoltage: '6.1',
-      bcVoltage: '6.1',
-      caVoltage: '6.1',
-      aCurrent: '6.1',
-      bCurrent: '6.1',
-      cCurrent: '6.1',
-      frequency: '6.01',
-      power: '6.1',
-      dVoltage: '6.1',
-      dCurrent: '6.1',
-      dPower: '6.1',
-      todayDischarge: '0',
-      todayCharge: '0'
+      error0: '0',
+      error1: '0',
+      wMode: '0',
+      bV: '0',
+      bT: '0',
+      acInAcP: '0',
+      acOutV: '0',
+      acOutAcP: '0',
+      acOutF: '0',
+      acOutC: '0',
+      bCap: '0',
+      sInP1: '0',
+      bC: '0',
+      sInV1: '0',
+      maxT: '0',
+      acInToAcP: '0',
+      acInC: '0',
+      sInC1: '0',
+      acOutAppP: '0',
+      acInV: '0',
+      acInF: '0',
+      acOutPP: '0',
+      innT: '0',
+      status: '0',
+      acOutToP: '0',
+      bP: '0',
+      totGenE: '0',
+      genEnH: '0',
+      genEnD: '0',
+      genEnM: '0',
+      genEnY: '0',
+      saveT: '0',
+      dateHourE: '0',
+      dateDayE: '0',
+      dateMonE: '0',
+      dateYearE: '0',
+      con1: '0',
+      con2: '0',
+      con3: '0',
+      con4: '0'
     }
     // {
     //   id: '02',
@@ -199,14 +227,49 @@ const initialDeviceState = {
   bms: [
     {
       id: 1,
-      name: 'STC',
-      labelVoltage: '12.1',
-      alarmNo: '1',
-      batteryVoltage: '11.9',
-      batteryTemp: '28.3',
-      dischargeTest: 'C',
-      lastDischargeAlarm: '20201203152226',
-      lastVTscanAlarm: '20201203163324'
+      vM: '0',
+      v1: '0',
+      v2: '0',
+      v3: '0',
+      v4: '0',
+      v5: '0',
+      v6: '0',
+      v7: '0',
+      v8: '0',
+      v9: '0',
+      v10: '0',
+      v11: '0',
+      v12: '0',
+      v13: '0',
+      v14: '0',
+      v15: '0',
+      v16: '0',
+      tN: '0',
+      t1: '0',
+      t2: '0',
+      t3: '0',
+      t4: '0',
+      t5: '0',
+      t6: '0',
+      t7: '0',
+      t8: '0',
+      t9: '0',
+      t10: '0',
+      t11: '0',
+      t12: '0',
+      t13: '0',
+      t14: '0',
+      t15: '0',
+      t16: '0',
+      tA: '0',
+      tV: '0',
+      sAh: '0',
+      tAh: '0',
+      cycle: '0',
+      soc: '0',
+      soh: '0',
+      equal: '0',
+      humidity: '0'
     }
     // {
     //   id: '02',
@@ -359,129 +422,425 @@ const reducerDevice = (state, action) => {
   switch (action.type) {
     case "pcs":
       switch (action.property){
-        case "p1":
-          state.pcs[action.id - 1].errorCode = action.payload;  
+        case "error0":
+          state.pcs[action.id - 1].error0 = action.payload;  
           return {
             ...state
           };
-        case "p2":
-          state.pcs[action.id - 1].inverterState1 = action.payload;  
+        case "error1":
+          state.pcs[action.id - 1].error1 = action.payload;  
           return {
             ...state
           };
-        case "p3":
-          state.pcs[action.id - 1].inverterState2 = action.payload;  
+        case "wMode":
+          state.pcs[action.id - 1].wMode = action.payload;  
           return {
             ...state
           };
-        case "p4":
-          state.pcs[action.id - 1].abVoltage = action.payload;  
+        case "bV":
+          state.pcs[action.id - 1].bV = action.payload;  
           // console.log("pcs p4: " + state.pcs[action.id - 1].abVoltage);
           return {
             ...state
           };
-        case "p5":
-          state.pcs[action.id - 1].bcVoltage = action.payload;  
+        case "bT":
+          state.pcs[action.id - 1].bT = action.payload;  
           return {
             ...state
           };
-        case "p6":
-          state.pcs[action.id - 1].caVoltage = action.payload;  
+        case "acInAcP":
+          state.pcs[action.id - 1].acInAcP = action.payload;  
           return {
             ...state
           };
-        case "p7":
-          state.pcs[action.id - 1].aCurrent = action.payload;  
+        case "acOutV":
+          state.pcs[action.id - 1].acOutV = action.payload;  
           return {
             ...state
           };
-        case "p8":
-          state.pcs[action.id - 1].bCurrent = action.payload;  
+        case "acOutAcP":
+          state.pcs[action.id - 1].acOutAcP = action.payload;  
           return {
             ...state
           };
-        case "p9":
-          state.pcs[action.id - 1].cCurrent = action.payload;  
+        case "acOutF":
+          state.pcs[action.id - 1].acOutF = action.payload;  
           return {
             ...state
           };
-        case "p10":
-          state.pcs[action.id - 1].frequency = action.payload;  
+        case "acOutC":
+          state.pcs[action.id - 1].acOutC = action.payload;  
           return {
             ...state
           };
-        case "p11":
-          state.pcs[action.id - 1].power = action.payload;  
+        case "bCap":
+          state.pcs[action.id - 1].bCap = action.payload;  
           return {
             ...state
           };
-        case "p12":
-          state.pcs[action.id - 1].dVoltage = action.payload;  
+        case "sInP1":
+          state.pcs[action.id - 1].sInP1 = action.payload;  
           return {
             ...state
           };
-        case "p13":
-          state.pcs[action.id - 1].dCurrent = action.payload;  
+        case "bC":
+          state.pcs[action.id - 1].bC = action.payload;  
           return {
             ...state
           };
-        case "p14":
-          state.pcs[action.id - 1].dPower = action.payload;  
+        case "sInV1":
+          state.pcs[action.id - 1].sInV1 = action.payload;  
           return {
             ...state
           };
-        case "p15":
-          state.pcs[action.id - 1].todayDischarge = action.payload;  
+        case "maxT":
+          state.pcs[action.id - 1].maxT = action.payload;  
           return {
             ...state
           };
-        case "p16":
-          state.pcs[action.id - 1].todayCharge = action.payload;  
-        return {
-          ...state
-        };
+        case "acInToAcP":
+          state.pcs[action.id - 1].acInToAcP = action.payload;  
+          return {
+            ...state
+          };
+        case "acInC":
+          state.pcs[action.id - 1].acInC = action.payload;  
+          return {
+            ...state
+          };
+        case "sInC1":
+          state.pcs[action.id - 1].sInC1 = action.payload;  
+          return {
+            ...state
+          };
+        case "acOutAppP":
+          state.pcs[action.id - 1].acOutAppP = action.payload;  
+          return {
+            ...state
+          };
+        case "acInV":
+          state.pcs[action.id - 1].acInV = action.payload;  
+          // console.log("pcs p4: " + state.pcs[action.id - 1].abVoltage);
+          return {
+            ...state
+          };
+        case "acInF":
+          state.pcs[action.id - 1].acInF = action.payload;  
+          return {
+            ...state
+          };
+        case "acOutPP":
+          state.pcs[action.id - 1].acOutPP = action.payload;  
+          return {
+            ...state
+          };
+        case "innT":
+          state.pcs[action.id - 1].innT = action.payload;  
+          return {
+            ...state
+          };
+        case "status":
+          state.pcs[action.id - 1].status = action.payload;  
+          return {
+            ...state
+          };
+        case "acOutToP":
+          state.pcs[action.id - 1].acOutToP = action.payload;  
+          return {
+            ...state
+          };
+        case "bP":
+          state.pcs[action.id - 1].bP = action.payload;  
+          return {
+            ...state
+          };
+        case "totGenE":
+          state.pcs[action.id - 1].totGenE = action.payload;  
+          return {
+            ...state
+          };
+        case "genEnH":
+          state.pcs[action.id - 1].genEnH = action.payload;  
+          return {
+            ...state
+          };
+        case "genEnD":
+          state.pcs[action.id - 1].genEnD = action.payload;  
+          return {
+            ...state
+          };
+        case "genEnM":
+          state.pcs[action.id - 1].genEnM = action.payload;  
+          return {
+            ...state
+          };
+        case "genEnY":
+          state.pcs[action.id - 1].genEnY = action.payload;  
+          return {
+            ...state
+          };
+        case "saveT":
+          state.pcs[action.id - 1].saveT = action.payload;  
+          return {
+            ...state
+          };
+        case "dateHourE":
+          state.pcs[action.id - 1].dateHourE = action.payload;  
+          return {
+            ...state
+          };
+        case "dateDayE":
+          state.pcs[action.id - 1].dateDayE = action.payload;  
+          return {
+            ...state
+          };
+        case "dateMonE":
+          state.pcs[action.id - 1].dateMonE = action.payload;  
+          return {
+            ...state
+          };
+        case "dateYearE":
+          state.pcs[action.id - 1].dateYearE = action.payload;  
+          return {
+            ...state
+          };
+        case "con1":
+          state.pcs[action.id - 1].con1 = action.payload;  
+          return {
+            ...state
+          };
+        case "con2":
+          state.pcs[action.id - 1].con2 = action.payload;  
+          return {
+            ...state
+          };
+        case "con3":
+          state.pcs[action.id - 1].con3 = action.payload;  
+          return {
+            ...state
+          };
+        case "con4":
+          state.pcs[action.id - 1].con4 = action.payload;  
+          return {
+            ...state
+          };
         default:
           throw new Error();
       }
     case "bms":
       switch (action.property){
-        case "p1":
-          state.bms[action.id - 1].name = action.payload;  
+        case "vM":
+          state.bms[action.id - 1].vM = action.payload;  
           return {
             ...state
           };
-        case "p2":
-          state.bms[action.id - 1].labelVoltage = action.payload;  
+        case "v1":
+          state.bms[action.id - 1].v1 = action.payload;  
           return {
             ...state
           };
-        case "p3":
-          state.bms[action.id - 1].alarmNo = action.payload;  
+        case "v2":
+          state.bms[action.id - 1].v2 = action.payload;  
           return {
             ...state
           };
-        case "p4":
-          state.bms[action.id - 1].batteryVoltage = action.payload;  
+        case "v3":
+          state.bms[action.id - 1].v3 = action.payload;  
           return {
             ...state
           };
-        case "p5":
-          state.bms[action.id - 1].batteryTemp = action.payload;  
+        case "v4":
+          state.bms[action.id - 1].v4 = action.payload;  
           return {
             ...state
           };
-        case "p6":
-          state.bms[action.id - 1].dischargeTest = action.payload;  
+        case "v5":
+          state.bms[action.id - 1].v5 = action.payload;  
           return {
             ...state
           };
-        case "p7":
-          state.bms[action.id - 1].lastDischargeAlarm = action.payload;  
+        case "v6":
+          state.bms[action.id - 1].v6 = action.payload;  
           return {
             ...state
           };
-        case "p8":
-          state.bms[action.id - 1].lastVTscanAlarm = action.payload;  
+        case "v7":
+          state.bms[action.id - 1].v7 = action.payload;  
+          return {
+            ...state
+          };
+        case "v8":
+          state.bms[action.id - 1].v8 = action.payload;  
+          return {
+            ...state
+          };
+        case "v9":
+          state.bms[action.id - 1].v9 = action.payload;  
+          return {
+            ...state
+          };
+        case "v10":
+          state.bms[action.id - 1].v10 = action.payload;  
+          return {
+            ...state
+          };
+        case "v11":
+          state.bms[action.id - 1].v11 = action.payload;  
+          return {
+            ...state
+          };
+        case "v12":
+          state.bms[action.id - 1].v12 = action.payload;  
+          return {
+            ...state
+          };
+        case "v13":
+          state.bms[action.id - 1].v13 = action.payload;  
+          return {
+            ...state
+          };
+        case "v14":
+          state.bms[action.id - 1].v14 = action.payload;  
+          return {
+            ...state
+          };
+        case "v15":
+          state.bms[action.id - 1].v15 = action.payload;  
+          return {
+            ...state
+          };
+        case "v16":
+          state.bms[action.id - 1].v16 = action.payload;  
+          return {
+            ...state
+          };
+        case "tN":
+          state.bms[action.id - 1].tN = action.payload;  
+          return {
+            ...state
+          };
+        case "t1":
+          state.bms[action.id - 1].t1 = action.payload;  
+          return {
+            ...state
+          };
+        case "t2":
+          state.bms[action.id - 1].t2 = action.payload;  
+          return {
+            ...state
+          };
+        case "t3":
+          state.bms[action.id - 1].t3 = action.payload;  
+          return {
+            ...state
+          };
+        case "t4":
+          state.bms[action.id - 1].t4 = action.payload;  
+          return {
+            ...state
+          };
+        case "t5":
+          state.bms[action.id - 1].t5 = action.payload;  
+          return {
+            ...state
+          };
+        case "t6":
+          state.bms[action.id - 1].t6 = action.payload;  
+          return {
+            ...state
+          };
+        case "t7":
+          state.bms[action.id - 1].t7 = action.payload;  
+          return {
+            ...state
+          };
+        case "t8":
+          state.bms[action.id - 1].t8 = action.payload;  
+          return {
+            ...state
+          };
+        case "t9":
+          state.bms[action.id - 1].t9 = action.payload;  
+          return {
+            ...state
+          };
+        case "t10":
+          state.bms[action.id - 1].t10 = action.payload;  
+          return {
+            ...state
+          };
+        case "t11":
+          state.bms[action.id - 1].t11 = action.payload;  
+          return {
+            ...state
+          };
+        case "t12":
+          state.bms[action.id - 1].t12 = action.payload;  
+          return {
+            ...state
+          };
+        case "t13":
+          state.bms[action.id - 1].t13 = action.payload;  
+          return {
+            ...state
+          };
+        case "t14":
+          state.bms[action.id - 1].t14 = action.payload;  
+          return {
+            ...state
+          };
+        case "t15":
+          state.bms[action.id - 1].t15 = action.payload;  
+          return {
+            ...state
+          };
+        case "t16":
+          state.bms[action.id - 1].t16 = action.payload;  
+          return {
+            ...state
+          };
+        case "tA":
+          state.bms[action.id - 1].tA = action.payload;  
+          return {
+            ...state
+          };
+        case "tV":
+          state.bms[action.id - 1].tV = action.payload;  
+          return {
+            ...state
+          };
+        case "sAh":
+          state.bms[action.id - 1].sAh = action.payload;  
+          return {
+            ...state
+          };
+        case "tAh":
+          state.bms[action.id - 1].tAh = action.payload;  
+          return {
+            ...state
+          };
+        case "cycle":
+          state.bms[action.id - 1].cycle = action.payload;  
+          return {
+            ...state
+          };
+        case "soc":
+          state.bms[action.id - 1].soc = action.payload;  
+          return {
+            ...state
+          };
+        case "soh":
+          state.bms[action.id - 1].soh = action.payload;  
+          return {
+            ...state
+          };
+        case "equal":
+          state.bms[action.id - 1].equal = action.payload;  
+          return {
+            ...state
+          };
+        case "humidity":
+          state.bms[action.id - 1].humidity = action.payload;  
           return {
             ...state
           };

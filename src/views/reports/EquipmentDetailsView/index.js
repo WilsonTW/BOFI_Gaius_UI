@@ -18,10 +18,10 @@ import useIsMountedRef from 'src/hooks/useIsMountedRef';
 import Header from './Header';
 import PCSs from './PCSs';
 import BMSs from './BMSs';
-import PLCs from './PLCs';
-import MPPTs from './MPPTs';
-import INVERTERs from './INVERTERs';
-import POWERs from './POWERs';
+// import PLCs from './PLCs';
+// import MPPTs from './MPPTs';
+// import INVERTERs from './INVERTERs';
+// import POWERs from './POWERs';
 
 import { MqttContext } from 'src/contexts/MqttContext';
 
@@ -39,11 +39,11 @@ const EquipmentDetailsView = () => {
   const isMountedRef = useIsMountedRef();
   const [pcs, setPcs] = useState('pcs');
   const [bms, setBms] = useState('bms');
-  const [plc, setPlc] = useState('plc');
-  const [mppt, setMppt] = useState('mppt');
-  const [inverter1, setInverter1] = useState('inverter1');
-  const [inverter2, setInverter2] = useState('inverter2');
-  const [powermeter, setPowermeter] = useState('powermeter');
+  // const [plc, setPlc] = useState('plc');
+  // const [mppt, setMppt] = useState('mppt');
+  // const [inverter1, setInverter1] = useState('inverter1');
+  // const [inverter2, setInverter2] = useState('inverter2');
+  // const [powermeter, setPowermeter] = useState('powermeter');
   const [currentTab, setCurrentTab] = useState('pcs');
   
   const [state, dispatch, stateDevice, dispatchDevice] = useContext(MqttContext);
@@ -51,9 +51,9 @@ const EquipmentDetailsView = () => {
   const tabs = [
     { value: 'pcs', label: 'PCS' },
     { value: 'bms', label: 'BMS' },
-    { value: 'plc', label: 'PLC' },
-    { value: 'mppt', label: 'MPPT' },
-    { value: 'inverter', label: 'Inverter' }
+    // { value: 'plc', label: 'PLC' },
+    // { value: 'mppt', label: 'MPPT' },
+    // { value: 'inverter', label: 'Inverter' }
     // { value: 'powerMeter', label: 'Power Meter' }
   ];
 
@@ -150,12 +150,12 @@ const EquipmentDetailsView = () => {
   useEffect(() => {
     getPcs();
     getBms();
-    getPlc();
-    getMppt();
-    getInverter1();
-    getInverter2();
-    getPowermeter();
-  }, [getPcs, getBms, getPlc, getMppt, getInverter1, getInverter2,getPowermeter]);
+    // getPlc();
+    // getMppt();
+    // getInverter1();
+    // getInverter2();
+    // getPowermeter();
+  }, [getPcs, getBms/*, getPlc, getMppt, getInverter1, getInverter2,getPowermeter*/]);
 
   if (!pcs) {
     return null;
@@ -163,21 +163,21 @@ const EquipmentDetailsView = () => {
   if (!bms) {
     return null;
   }
-  if (!plc) {
-    return null;
-  }
-  if (!mppt) {
-    return null;
-  }
-  if (!inverter1) {
-    return null;
-  }
-  if (!inverter2) {
-    return null;
-  }
-  if (!powermeter) {
-    return null;
-  }
+  // if (!plc) {
+  //   return null;
+  // }
+  // if (!mppt) {
+  //   return null;
+  // }
+  // if (!inverter1) {
+  //   return null;
+  // }
+  // if (!inverter2) {
+  //   return null;
+  // }
+  // if (!powermeter) {
+  //   return null;
+  // }
 
   return (
     <Page
@@ -207,9 +207,9 @@ const EquipmentDetailsView = () => {
         <Box mt={3}>
           {currentTab === 'pcs' && <PCSs equipment={[pcs]} />}
           {currentTab === 'bms' && <BMSs equipment={[bms]} />}
-          {currentTab === 'plc' && <PLCs equipment={[plc]} />}
-          {currentTab === 'mppt' && <MPPTs equipment={[mppt]} />}
-          {currentTab === 'inverter' && <INVERTERs equipment={[inverter1, inverter2]} />}
+          {/* {currentTab === 'plc' && <PLCs equipment={[plc]} />} */}
+          {/* {currentTab === 'mppt' && <MPPTs equipment={[mppt]} />} */}
+          {/* {currentTab === 'inverter' && <INVERTERs equipment={[inverter1, inverter2]} />} */}
           {/* {currentTab === 'powerMeter' && <POWERs equipment={[powermeter]} />} */}
         </Box>
       </Container>
