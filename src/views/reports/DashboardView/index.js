@@ -111,13 +111,13 @@ const DashboardView = () => {
           >
             <RadialChart />
           </Grid>
-          <Grid
+          {/* <Grid
             item
             lg={12}
             xs={12}
           >
             <LineChart />
-          </Grid>
+          </Grid> */}
           <Grid
             item
             lg={12}
