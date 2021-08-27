@@ -420,7 +420,7 @@ const qosOption = [
 
 const reducerDevice = (state, action) => {
   switch (action.type) {
-    case "pcs":
+    case "sp4k":
       switch (action.property){
         case "error0":
           state.pcs[action.id - 1].error0 = action.payload;  
@@ -627,7 +627,7 @@ const reducerDevice = (state, action) => {
         default:
           throw new Error();
       }
-    case "bms":
+    case "zdaf":
       switch (action.property){
         case "vM":
           state.bms[action.id - 1].vM = action.payload;  
@@ -1361,26 +1361,26 @@ export const MqttProvider = ({ children }) => {
             mqttSub(bms, property);
           }
         }
-        for (const plc of device.plc) {
-          for (const property of plcProfile){
-            mqttSub(plc, property);
-          }
-        }
-        for (const mppt of device.mppt) {
-          for (const property of mpptProfile){
-            mqttSub(mppt, property);
-          }
-        }
-        for (const inverter of device.inverter) {
-          for (const property of inverterProfile){
-            mqttSub(inverter, property);
-          }
-        }
-        for (const powermeter of device.powermeter) {
-          for (const property of powermeterProfile){
-            mqttSub(powermeter, property);
-          }
-        }
+        // for (const plc of device.plc) {
+        //   for (const property of plcProfile){
+        //     mqttSub(plc, property);
+        //   }
+        // }
+        // for (const mppt of device.mppt) {
+        //   for (const property of mpptProfile){
+        //     mqttSub(mppt, property);
+        //   }
+        // }
+        // for (const inverter of device.inverter) {
+        //   for (const property of inverterProfile){
+        //     mqttSub(inverter, property);
+        //   }
+        // }
+        // for (const powermeter of device.powermeter) {
+        //   for (const property of powermeterProfile){
+        //     mqttSub(powermeter, property);
+        //   }
+        // }
       });
       client.on('error', (err) => {
         console.error('Connection error: ', err);

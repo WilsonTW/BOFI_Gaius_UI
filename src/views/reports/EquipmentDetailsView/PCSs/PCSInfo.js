@@ -51,7 +51,7 @@ const PCSInfo = ({
                 variant="body2"
                 color="textSecondary"
               >
-                {equipment.errorCode}
+                {equipment.error0}
               </Typography>
             </TableCell>
           </TableRow>
@@ -64,7 +64,7 @@ const PCSInfo = ({
                 variant="body2"
                 color="textSecondary"
               >
-                {equipment.inverterState1}
+                {equipment.error1}
               </Typography>
             </TableCell>
           </TableRow>
@@ -77,7 +77,7 @@ const PCSInfo = ({
                 variant="body2"
                 color="textSecondary"
               >
-                {equipment.inverterState2}
+                {equipment.wMode}
               </Typography>
             </TableCell>
           </TableRow>
@@ -90,7 +90,7 @@ const PCSInfo = ({
                 variant="body2"
                 color="textSecondary"
               >
-                {equipment.abVoltage}
+                {equipment.bV}
               </Typography>
             </TableCell>
           </TableRow>
@@ -103,7 +103,7 @@ const PCSInfo = ({
                 variant="body2"
                 color="textSecondary"
               >
-                {equipment.bcVoltage}
+                {equipment.bT}
               </Typography>
             </TableCell>
           </TableRow>
@@ -116,7 +116,7 @@ const PCSInfo = ({
                 variant="body2"
                 color="textSecondary"
               >
-                {equipment.caVoltage}
+                {equipment.acInAcP}
               </Typography>
             </TableCell>
           </TableRow>
@@ -129,7 +129,7 @@ const PCSInfo = ({
                 variant="body2"
                 color="textSecondary"
               >
-                {equipment.aCurrent}
+                {equipment.acOutV}
               </Typography>
             </TableCell>
           </TableRow>
@@ -142,7 +142,7 @@ const PCSInfo = ({
                 variant="body2"
                 color="textSecondary"
               >
-                {equipment.bCurrent}
+                {equipment.acOutAcP}
               </Typography>
             </TableCell>
           </TableRow>
@@ -155,7 +155,7 @@ const PCSInfo = ({
                 variant="body2"
                 color="textSecondary"
               >
-                {equipment.cCurrent}
+                {equipment.acOutF}
               </Typography>
             </TableCell>
           </TableRow>  
@@ -168,7 +168,7 @@ const PCSInfo = ({
                 variant="body2"
                 color="textSecondary"
               >
-                {equipment.frequency}
+                {equipment.acOutC}
               </Typography>
             </TableCell>
           </TableRow>
@@ -181,7 +181,7 @@ const PCSInfo = ({
                 variant="body2"
                 color="textSecondary"
               >
-                {equipment.power}
+                {equipment.bCap}
               </Typography>
             </TableCell>
           </TableRow>
@@ -194,7 +194,7 @@ const PCSInfo = ({
                 variant="body2"
                 color="textSecondary"
               >
-                {equipment.dVoltage}
+                {equipment.sInP1}
               </Typography>
             </TableCell>
           </TableRow>
@@ -207,7 +207,7 @@ const PCSInfo = ({
                 variant="body2"
                 color="textSecondary"
               >
-                {equipment.dCurrent}
+                {equipment.bC}
               </Typography>
             </TableCell>
           </TableRow>
@@ -220,7 +220,345 @@ const PCSInfo = ({
                 variant="body2"
                 color="textSecondary"
               >
-                {equipment.dPower}
+                {equipment.sInV1}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.maxT}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.acInToAcP}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.acInC}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.sInC1}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.acOutAppP}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.acInV}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.acInF}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.acOutPP}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.innT}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.status}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.acOutToP}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.bP}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.totGenE}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.genEnH}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.genEnD}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.genEnM}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.genEnY}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.saveT}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.dateHourE}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.dateDayE}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.dateMonE}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.dateYearE}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.con1}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.con2}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.con3}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              直流側功率(KW)
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {equipment.con4}
               </Typography>
             </TableCell>
           </TableRow>
