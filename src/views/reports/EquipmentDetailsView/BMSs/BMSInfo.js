@@ -45,7 +45,7 @@ const BMSInfo = ({
         <TableBody>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              電池組名稱
+              電池節數
             </TableCell>
             <TableCell>
               <Typography
@@ -58,7 +58,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              電池組標稱電壓(V)
+              Cell1 電壓(mV)
             </TableCell>
             <TableCell>
               <Typography
@@ -71,7 +71,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              警報編號
+              Cell2 電壓(mV)
             </TableCell>
             <TableCell>
               <Typography
@@ -84,7 +84,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              電池電壓(V)
+              Cell3 電壓(mV)
             </TableCell>
             <TableCell>
               <Typography
@@ -97,7 +97,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              電池溫度(°C)
+              Cell4 電壓(mV)
             </TableCell>
             <TableCell>
               <Typography
@@ -110,7 +110,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              放電測試數據
+              Cell5 電壓(mV)
             </TableCell>
             <TableCell>
               <Typography
@@ -123,7 +123,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次放電測試警報
+              Cell6 電壓(mV)
             </TableCell>
             <TableCell>
               <Typography
@@ -136,7 +136,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              Cell7 電壓(mV)
             </TableCell>
             <TableCell>
               <Typography
@@ -149,7 +149,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              Cell8 電壓(mV)
             </TableCell>
             <TableCell>
               <Typography
@@ -162,7 +162,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              Cell9 電壓(mV)
             </TableCell>
             <TableCell>
               <Typography
@@ -175,7 +175,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              Cell10 電壓(mV)
             </TableCell>
             <TableCell>
               <Typography
@@ -188,7 +188,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              Cell11 電壓(mV)
             </TableCell>
             <TableCell>
               <Typography
@@ -201,7 +201,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              Cell12 電壓(mV)
             </TableCell>
             <TableCell>
               <Typography
@@ -214,7 +214,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              Cell13 電壓(mV)
             </TableCell>
             <TableCell>
               <Typography
@@ -227,7 +227,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              Cell14 電壓(mV)
             </TableCell>
             <TableCell>
               <Typography
@@ -240,7 +240,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              Cell15 電壓(mV)
             </TableCell>
             <TableCell>
               <Typography
@@ -253,7 +253,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              Cell16 電壓(mV)
             </TableCell>
             <TableCell>
               <Typography
@@ -266,7 +266,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              溫度數量
             </TableCell>
             <TableCell>
               <Typography
@@ -279,7 +279,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              溫度1(°C)
             </TableCell>
             <TableCell>
               <Typography
@@ -292,7 +292,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              溫度2(°C)
             </TableCell>
             <TableCell>
               <Typography
@@ -305,7 +305,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              溫度3(°C)
             </TableCell>
             <TableCell>
               <Typography
@@ -318,7 +318,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              溫度4(°C)
             </TableCell>
             <TableCell>
               <Typography
@@ -331,7 +331,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              溫度5(°C)
             </TableCell>
             <TableCell>
               <Typography
@@ -344,7 +344,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              溫度6(°C)
             </TableCell>
             <TableCell>
               <Typography
@@ -357,7 +357,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              溫度7(°C)
             </TableCell>
             <TableCell>
               <Typography
@@ -370,7 +370,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              溫度8(°C)
             </TableCell>
             <TableCell>
               <Typography
@@ -383,7 +383,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              溫度9(°C)
             </TableCell>
             <TableCell>
               <Typography
@@ -396,7 +396,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              溫度10(°C)
             </TableCell>
             <TableCell>
               <Typography
@@ -409,7 +409,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              溫度11(°C)
             </TableCell>
             <TableCell>
               <Typography
@@ -422,7 +422,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              溫度12(°C)
             </TableCell>
             <TableCell>
               <Typography
@@ -435,7 +435,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              溫度13(°C)
             </TableCell>
             <TableCell>
               <Typography
@@ -448,7 +448,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              溫度14(°C)
             </TableCell>
             <TableCell>
               <Typography
@@ -461,7 +461,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              溫度15(°C)
             </TableCell>
             <TableCell>
               <Typography
@@ -474,7 +474,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              溫度16(°C)
             </TableCell>
             <TableCell>
               <Typography
@@ -487,7 +487,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              Pack 電流(Ａ)
             </TableCell>
             <TableCell>
               <Typography
@@ -500,7 +500,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              Pack 總電壓(V)
             </TableCell>
             <TableCell>
               <Typography
@@ -513,7 +513,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              Pack 剩餘毫安培時量(Ah)
             </TableCell>
             <TableCell>
               <Typography
@@ -526,7 +526,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              Pack 總毫安培時量(Ah)
             </TableCell>
             <TableCell>
               <Typography
@@ -539,7 +539,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              電池 cycle
             </TableCell>
             <TableCell>
               <Typography
@@ -552,7 +552,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              SOC(%)
             </TableCell>
             <TableCell>
               <Typography
@@ -565,7 +565,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              SOH(%)
             </TableCell>
             <TableCell>
               <Typography
@@ -578,7 +578,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              均衡1-16
             </TableCell>
             <TableCell>
               <Typography
@@ -591,7 +591,7 @@ const BMSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              前次電壓&溫度報警
+              濕度(%)
             </TableCell>
             <TableCell>
               <Typography
