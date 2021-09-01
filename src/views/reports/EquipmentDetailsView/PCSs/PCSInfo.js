@@ -32,6 +32,9 @@ const PCSInfo = ({
   ...rest
 }) => {
   const classes = useStyles();
+  const wModeName = ['開機模式', '待機模式', '旁路模式', '電池模式', '故障模式', '混合模式', '充電模式'];
+  // const error0Name =[];
+  // const error1Name =[];
 
   return (
     <Card
@@ -77,13 +80,13 @@ const PCSInfo = ({
                 variant="body2"
                 color="textSecondary"
               >
-                {equipment.wMode}
+                {wModeName[parseInt(equipment.wMode)]}
               </Typography>
             </TableCell>
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              Battery voltage(V)
+              電池電壓(V)
             </TableCell>
             <TableCell>
               <Typography
@@ -96,7 +99,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              External battery temperature(°C)
+              外部電池溫度(°C)
             </TableCell>
             <TableCell>
               <Typography
@@ -109,7 +112,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              AC input active power R(V)
+              AC輸入實功率(V)
             </TableCell>
             <TableCell>
               <Typography
@@ -122,7 +125,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              AC output voltage R(V)
+              AC輸出電壓(V)
             </TableCell>
             <TableCell>
               <Typography
@@ -135,7 +138,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              AC output active power R(W)
+              AC輸出實功率(W)
             </TableCell>
             <TableCell>
               <Typography
@@ -148,7 +151,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              AC output frequency(Hz)
+              AC輸出頻率(Hz)
             </TableCell>
             <TableCell>
               <Typography
@@ -161,7 +164,7 @@ const PCSInfo = ({
           </TableRow>  
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              AC output current R(A)
+              AC輸出電流(A)
             </TableCell>
             <TableCell>
               <Typography
@@ -174,7 +177,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              Battery capacity(%)
+              電池容量(%)
             </TableCell>
             <TableCell>
               <Typography
@@ -187,7 +190,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              Solar input power 1(W)
+              太陽能輸入功率(W)
             </TableCell>
             <TableCell>
               <Typography
@@ -200,7 +203,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              Battery current(A)
+              電池電流(A)
             </TableCell>
             <TableCell>
               <Typography
@@ -213,7 +216,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              Solar input voltage 1(V)
+              太陽能輸入電壓(V)
             </TableCell>
             <TableCell>
               <Typography
@@ -226,7 +229,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              Component max temperature(°C)
+              設備最高溫(°C)
             </TableCell>
             <TableCell>
               <Typography
@@ -239,7 +242,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              AC input total active power(W)
+              總AC輸入實功率(W)
             </TableCell>
             <TableCell>
               <Typography
@@ -252,7 +255,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              AC input current R(A)
+              AC輸入電流(A)
             </TableCell>
             <TableCell>
               <Typography
@@ -265,7 +268,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              Solar input current 1(A)
+              太陽能輸入電流(A)
             </TableCell>
             <TableCell>
               <Typography
@@ -278,7 +281,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              AC output apperent power R(VA)
+              AC輸出視在功率(VA)
             </TableCell>
             <TableCell>
               <Typography
@@ -291,7 +294,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              AC input voltage R(V)
+              AC輸入電壓(V)
             </TableCell>
             <TableCell>
               <Typography
@@ -304,7 +307,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              AC input frequency(Hz)
+              AC輸入頻率(Hz)
             </TableCell>
             <TableCell>
               <Typography
@@ -317,7 +320,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              AC output power percentage(%)
+              AC輸出功率比例(%)
             </TableCell>
             <TableCell>
               <Typography
@@ -330,7 +333,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              Inner temperature(°C)
+              內部溫度(°C)
             </TableCell>
             <TableCell>
               <Typography
@@ -343,7 +346,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              Status&Direction
+              運行狀態
             </TableCell>
             <TableCell>
               <Typography
@@ -356,7 +359,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              AC output total power(W)
+              AC總輸出功率(W)
             </TableCell>
             <TableCell>
               <Typography
@@ -369,7 +372,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              Battery power(W)
+              電池電量(W)
             </TableCell>
             <TableCell>
               <Typography
@@ -382,7 +385,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              total generated energy(KW/h)
+              總發電量(KWh)
             </TableCell>
             <TableCell>
               <Typography
@@ -395,7 +398,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              generated energy of hour(W/h)
+              每小時發電量(Wh)
             </TableCell>
             <TableCell>
               <Typography
@@ -408,7 +411,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              generated energy of day(W/h)
+              每天發電量(Wh)
             </TableCell>
             <TableCell>
               <Typography
@@ -421,7 +424,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              generated energy of month(W/h)
+              每月發電量(Wh)
             </TableCell>
             <TableCell>
               <Typography
@@ -434,7 +437,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              generated energy of year(W/h)
+              每年發電量(Wh)
             </TableCell>
             <TableCell>
               <Typography
@@ -447,72 +450,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              First generated energy saved time
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.saveT}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              The date of the hourly energy
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.dateHourE}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              The date of the daily energy
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.dateDayE}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              The date of the monthly energy
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.dateMonE}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              The date of the yearly energy
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.dateYearE}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              Control 1
+              控制 1
             </TableCell>
             <TableCell>
               <Typography
@@ -525,7 +463,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              Control 2
+              控制 2
             </TableCell>
             <TableCell>
               <Typography
@@ -538,7 +476,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              Control 3
+              設備備援供電設定(啟/閉)
             </TableCell>
             <TableCell>
               <Typography
@@ -551,7 +489,7 @@ const PCSInfo = ({
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              Control 4
+              AC充電穩壓設定(啟/閉)
             </TableCell>
             <TableCell>
               <Typography
