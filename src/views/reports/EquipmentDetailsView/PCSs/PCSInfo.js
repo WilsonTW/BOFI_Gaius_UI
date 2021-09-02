@@ -464,7 +464,7 @@ for (var i=0; i<8; i++) {
                 variant="body2"
                 color="textSecondary"
               >
-                {status0Name[((parseInt(equipment.status0)))]}
+                {status0Name[((parseInt(equipment.status0) & 0xF0000) >> 16)]}
               </Typography>
             </TableCell>
           </TableRow>
@@ -477,7 +477,7 @@ for (var i=0; i<8; i++) {
                 variant="body2"
                 color="textSecondary"
               >
-                {status1Name[((parseInt(equipment.status0)))]}
+                {status1Name[((parseInt(equipment.status0) & 0xF000000) >> 24)]}
               </Typography>
             </TableCell>
           </TableRow>
