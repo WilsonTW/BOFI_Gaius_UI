@@ -50,6 +50,120 @@ const PCSInfo = ({
                      '太陽能輸入1欠壓'];
   const error1Name =['AC輸入波型失真','EPO啟動','負載過載','溫度超限','AC輸入相位錯誤','AC輸入孤島'];
   const wModeName = ['開機模式', '待機模式', '旁路模式', '電池模式', '故障模式', '混合模式', '充電模式'];
+  const con1Name =['寬AC輸入設定 (啟/閉)',
+                   '發電機模式設定 (啟/閉)'];
+  const con2Name =['市電併網功率自動調整 (啟/閉)',
+                   '太陽能不足電池供市電併網 (啟/閉)',
+                   '太陽能充足電池供市電併網 (啟/閉)',
+                   '太陽能無輸入電池供電設定 (啟/閉)',
+                   '太陽能不足電池供電設定 (啟/閉)',
+                   '市電併網設定 (啟/閉)',
+                   'AC充電電池設定 (啟/閉)',
+                   '電池充放設定 (啟/閉)'];
+  const error0List =[(parseInt(equipment.error0) & 0x1),
+                     ((parseInt(equipment.error0) & 0x2) >> 1),
+                     ((parseInt(equipment.error0) & 0x4) >> 2),
+                     ((parseInt(equipment.error0) & 0x8) >> 3),
+                     ((parseInt(equipment.error0) & 0x10) >> 4),
+                     ((parseInt(equipment.error0) & 0x20) >> 5),
+                     ((parseInt(equipment.error0) & 0x40) >> 6),
+                     ((parseInt(equipment.error0) & 0x80) >> 7),
+                     ((parseInt(equipment.error0) & 0x100) >> 8),
+                     ((parseInt(equipment.error0) & 0x200) >> 9),
+                     ((parseInt(equipment.error0) & 0x400) >> 10),
+                     ((parseInt(equipment.error0) & 0x800) >> 11),
+                     ((parseInt(equipment.error0) & 0x1000) >> 12),
+                     ((parseInt(equipment.error0) & 0x2000) >> 13),
+                     ((parseInt(equipment.error0) & 0x4000) >> 14),
+                     ((parseInt(equipment.error0) & 0x8000) >> 15)];
+  const error1List =[((parseInt(equipment.error1) & 0x400) >> 10),
+                     ((parseInt(equipment.error1) & 0x800) >> 11),
+                     ((parseInt(equipment.error1) & 0x1000) >> 12),
+                     ((parseInt(equipment.error1) & 0x2000) >> 13),
+                     ((parseInt(equipment.error1) & 0x4000) >> 14),
+                     ((parseInt(equipment.error1) & 0x8000) >> 15)];
+  const con1List =[((parseInt(equipment.con1) & 0x800) >> 11),
+                   ((parseInt(equipment.con1) & 0x1000) >> 12)];
+  const con2List =[((parseInt(equipment.con2) & 0x100) >> 8),
+                    ((parseInt(equipment.con2) & 0x200) >> 9),
+                    ((parseInt(equipment.con2) & 0x400) >> 10),
+                    ((parseInt(equipment.con2) & 0x800) >> 11),
+                    ((parseInt(equipment.con2) & 0x1000) >> 12),
+                    ((parseInt(equipment.con2) & 0x2000) >> 13),
+                    ((parseInt(equipment.con2) & 0x4000) >> 14),
+                    ((parseInt(equipment.con2) & 0x8000) >> 15)];
+const renderError0 = [];
+const renderError1 = [];
+const renderCon1 = [];
+const renderCon2 = [];
+for (var i=0; i<16; i++) {
+  renderError0.push(
+    <TableRow>
+    <TableCell className={classes.fontWeightMedium}>
+      {error0Name[i]}
+    </TableCell>
+    <TableCell>
+      <Typography
+        variant="body2"
+        color="textSecondary"
+      >
+        {error0List[i]}
+      </Typography>
+    </TableCell>
+    </TableRow>
+  );
+}
+for (var i=0; i<6; i++) {
+  renderError1.push(
+    <TableRow>
+    <TableCell className={classes.fontWeightMedium}>
+      {error1Name[i]}
+    </TableCell>
+    <TableCell>
+      <Typography
+        variant="body2"
+        color="textSecondary"
+      >
+        {error1List[i]}
+      </Typography>
+    </TableCell>
+    </TableRow>
+  );
+}
+for (var i=0; i<2; i++) {
+  renderCon1.push(
+    <TableRow>
+    <TableCell className={classes.fontWeightMedium}>
+      {con1Name[i]}
+    </TableCell>
+    <TableCell>
+      <Typography
+        variant="body2"
+        color="textSecondary"
+      >
+        {con1List[i]}
+      </Typography>
+    </TableCell>
+    </TableRow>
+  );
+}
+for (var i=0; i<8; i++) {
+  renderCon2.push(
+    <TableRow>
+    <TableCell className={classes.fontWeightMedium}>
+      {con2Name[i]}
+    </TableCell>
+    <TableCell>
+      <Typography
+        variant="body2"
+        color="textSecondary"
+      >
+        {con2List[i]}
+      </Typography>
+    </TableCell>
+    </TableRow>
+  );
+}
 
   return (
     <Card
@@ -60,32 +174,8 @@ const PCSInfo = ({
       <Divider />
       <Table>
         <TableBody>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              錯誤代碼 0
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.error0}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              錯誤代碼 1
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.error1}
-              </Typography>
-            </TableCell>
-          </TableRow>
+          {renderError0}
+          {renderError1}
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
               工作模式
@@ -463,7 +553,9 @@ const PCSInfo = ({
               </Typography>
             </TableCell>
           </TableRow>
-          <TableRow>
+          {renderCon1}
+          {renderCon2}
+          {/* <TableRow>
             <TableCell className={classes.fontWeightMedium}>
               控制 1
             </TableCell>
@@ -475,8 +567,8 @@ const PCSInfo = ({
                 {equipment.con1}
               </Typography>
             </TableCell>
-          </TableRow>
-          <TableRow>
+          </TableRow> */}
+          {/* <TableRow>
             <TableCell className={classes.fontWeightMedium}>
               控制 2
             </TableCell>
@@ -488,7 +580,7 @@ const PCSInfo = ({
                 {equipment.con2}
               </Typography>
             </TableCell>
-          </TableRow>
+          </TableRow> */}
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
               設備備援供電設定(啟/閉)
