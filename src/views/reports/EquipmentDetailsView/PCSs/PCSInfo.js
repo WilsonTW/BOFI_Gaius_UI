@@ -50,6 +50,12 @@ const PCSInfo = ({
                      '太陽能輸入1欠壓'];
   const error1Name =['AC輸入波型失真','EPO啟動','負載過載','溫度超限','AC輸入相位錯誤','AC輸入孤島'];
   const wModeName = ['開機模式', '待機模式', '旁路模式', '電池模式', '故障模式', '混合模式', '充電模式'];
+  const status0Name = ['NO', 'EN'];
+  const status1Name = ['Idle', 'Work'];
+  const status2Name = ['Idle', 'Work'];
+  const status3Name = ['Do nothing', 'Charge', 'Discharge'];
+  const status4Name = ['Do nothing', 'AC-DC', 'DC-AC'];
+  const status5Name = ['Do nothing', 'Input', 'Output'];
   const con1Name =['寬AC輸入設定 (啟/閉)',
                    '發電機模式設定 (啟/閉)'];
   const con2Name =['市電併網功率自動調整 (啟/閉)',
@@ -451,14 +457,79 @@ for (var i=0; i<8; i++) {
           </TableRow>
           <TableRow>
             <TableCell className={classes.fontWeightMedium}>
-              運行狀態
+              AC輸出連接狀態
             </TableCell>
             <TableCell>
               <Typography
                 variant="body2"
                 color="textSecondary"
               >
-                {equipment.status}
+                {status0Name[((parseInt(equipment.status0)))]}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              太陽能輸入1狀態
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {status1Name[((parseInt(equipment.status0)))]}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              太陽能輸入2狀態
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {status2Name[((parseInt(equipment.status1) & 0xF))]}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              電池運行狀態
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {status3Name[((parseInt(equipment.status1) & 0xF00) >> 8)]}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              DC/AC運行狀態
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {status4Name[((parseInt(equipment.status1) & 0xF0000) >> 16)]}
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className={classes.fontWeightMedium}>
+              主線運行狀態
+            </TableCell>
+            <TableCell>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+              >
+                {status5Name[((parseInt(equipment.status1) & 0xF000000) >> 24)]}
               </Typography>
             </TableCell>
           </TableRow>

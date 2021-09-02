@@ -138,7 +138,7 @@ const device = {
 
 const pcsProfile = [
   "error0","error1","wMode","bV","bT","acInAcP","acOutV","acOutAcP","acOutF","acOutC","bCap","sInP1","bC","sInV1","maxT","acInToAcP",
-  "acInC","sInC1","acOutAppP","acInV","acInF","acOutPP","innT","status","acOutToP","bP","totGenE","genEnH","genEnD","genEnM","genEnY","saveT",
+  "acInC","sInC1","acOutAppP","acInV","acInF","acOutPP","innT","status0","status1","acOutToP","bP","totGenE","genEnH","genEnD","genEnM","genEnY","saveT",
   "dateHourE","dateDayE","dateMonE","dateYearE","con1","con2","con3","con4"
 ]; 
 const bmsProfile = [
@@ -188,7 +188,8 @@ const initialDeviceState = {
       acInF: '0',
       acOutPP: '0',
       innT: '0',
-      status: '0',
+      status0: '0',
+      status1: '0',
       acOutToP: '0',
       bP: '0',
       totGenE: '0',
@@ -539,8 +540,13 @@ const reducerDevice = (state, action) => {
           return {
             ...state
           };
-        case "status":
-          state.pcs[action.id - 1].status = action.payload;  
+        case "status0":
+          state.pcs[action.id - 1].status0 = action.payload;  
+          return {
+            ...state
+          };
+        case "status1":
+          state.pcs[action.id - 1].status1 = action.payload;  
           return {
             ...state
           };
