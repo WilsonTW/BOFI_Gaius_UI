@@ -51,14 +51,14 @@ const Power = ({ className, ...rest }) => {
   const chargePower = {
     // value: state.valueTest,
     value: '700',
-    label: 'Charged Energy(KWh)'
+    label: '輸入功率(W)'
   };
   const dischargePower = {
     value: '920',
     // value: state.connectStatus,
     // value: state.isSubed,
     // value: state.mqttPayload,
-    label: 'Discharged Energy(KWh)'
+    label: '總發電量(KWh)'
   };
 
   const getPcs = useCallback(async () => {
@@ -90,7 +90,7 @@ const Power = ({ className, ...rest }) => {
           variant="inherit"
           color="inherit"
         >
-          Energy Today
+          太陽能
         </Typography>
         <Box
           display="flex"

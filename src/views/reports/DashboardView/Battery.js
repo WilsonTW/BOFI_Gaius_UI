@@ -39,11 +39,11 @@ const Battery = ({ className, ...rest }) => {
   };
   const voltageBattery = {
     value: '12.1',
-    label: 'Battery Voltage(V)'
+    label: 'SOC(%)'
   };
   const temperatureBattery = {
     value: '52',
-    label: 'Battery Temperature(°C)'
+    label: 'SOH(%)'
   };
 
   return (
@@ -58,7 +58,7 @@ const Battery = ({ className, ...rest }) => {
           variant="inherit"
           color="inherit"
         >
-          State
+          電池模組
         </Typography>
         <Box
           display="flex"

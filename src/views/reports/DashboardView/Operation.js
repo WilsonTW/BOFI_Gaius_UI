@@ -91,7 +91,7 @@ const Operation = ({ className, ...rest }) => {
           variant="inherit"
           color="inherit"
         >
-          Operation
+          系統運行模式
         </Typography>
         <Box
           display="flex"
@@ -131,12 +131,12 @@ const Operation = ({ className, ...rest }) => {
               variant="body2" 
               value="auto" 
               control={<Radio />} 
-              label="Auto Mode" />
+              label="綠電模式" />
             <FormControlLabel  
               variant="body2" 
               value="custom" 
               control={<Radio />} 
-              label="User-defined Mode" />
+              label="綠灰電模式" />
           </RadioGroup>
         </Box>
       </Box>

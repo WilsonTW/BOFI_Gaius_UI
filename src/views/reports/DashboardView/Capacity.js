@@ -39,11 +39,11 @@ const Capacity = ({ className, ...rest }) => {
   };
   const systemCapacity = {
     value: '100',
-    label: 'PCS Power(KW)'
+    label: '告警訊息'
   };
   const serviceCapacity = {
     value: '228',
-    label: 'Batter Energy(KWH)'
+    label: '告警訊息'
   };
 
   return (
@@ -58,7 +58,7 @@ const Capacity = ({ className, ...rest }) => {
           variant="inherit"
           color="inherit"
         >
-          System Capacity
+          異常告警
         </Typography>
         <Box
           display="flex"
@@ -107,7 +107,7 @@ const Capacity = ({ className, ...rest }) => {
             variant="outlined"
             size="normal"
           />
-         {/*  <Label
+          {/* <Label
             className={classes.label}
             color={data.difference > 0 ? 'success' : 'error'}
           >
