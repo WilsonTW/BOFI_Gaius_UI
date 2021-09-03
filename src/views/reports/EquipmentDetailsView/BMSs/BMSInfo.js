@@ -39,571 +39,624 @@ const BMSInfo = ({
       className={clsx(classes.root, className)}
       {...rest}
     >
-      <CardHeader title={"BMS Info : Station "+ station}  />
-      <Divider />
-      <Table>
-        <TableBody>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              電池節數
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.vM}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              Cell1 電壓(mV)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.v1}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              Cell2 電壓(mV)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.v2}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              Cell3 電壓(mV)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.v3}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              Cell4 電壓(mV)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.v4}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              Cell5 電壓(mV)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.v5}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              Cell6 電壓(mV)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.v6}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              Cell7 電壓(mV)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.v7}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              Cell8 電壓(mV)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.v8}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              Cell9 電壓(mV)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.v9}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              Cell10 電壓(mV)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.v10}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              Cell11 電壓(mV)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.v11}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              Cell12 電壓(mV)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.v12}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              Cell13 電壓(mV)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.v13}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              Cell14 電壓(mV)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.v14}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              Cell15 電壓(mV)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.v15}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              Cell16 電壓(mV)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.v16}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              溫度數量
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.tN}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              溫度1(°C)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.t1}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              溫度2(°C)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.t2}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              溫度3(°C)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.t3}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              溫度4(°C)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.t4}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              溫度5(°C)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.t5}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              溫度6(°C)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.t6}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              溫度7(°C)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.t7}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              溫度8(°C)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.t8}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              溫度9(°C)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.t9}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              溫度10(°C)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.t10}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              溫度11(°C)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.t11}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              溫度12(°C)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.t12}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              溫度13(°C)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.t13}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              溫度14(°C)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.t14}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              溫度15(°C)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.t15}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              溫度16(°C)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.t16}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              Pack 電流(Ａ)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.tA}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              Pack 總電壓(V)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.tV}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              Pack 剩餘毫安培時量(Ah)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.sAh}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              Pack 總毫安培時量(Ah)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.tAh}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              電池 cycle
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.cycle}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              SOC(%)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.soc}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              SOH(%)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.soh}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              均衡1-16
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.equal}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              濕度(%)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.humidity}
-              </Typography>
-            </TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
+      <Grid
+          container
+          spacing={1}
+        >
+           <Grid
+             lg={4}
+             sm={6}
+             xs={12}
+          >
+            <CardHeader 
+            classes={{ action: classes.current }}
+            subheader={"Station ID : " + station}
+            subheaderTypographyProps={{ color: 'primary', variant: 'body2' }}
+            titleTypographyProps={{ color: 'textPrimary' }}
+            title={"系統基本資訊"}  
+            />
+            <Divider />
+            <Table>
+              <TableBody>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    電池組充電電流(Ａ)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.tA}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    電池組總電壓(V)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.tV}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    電池組剩餘毫安培時量(Ah)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.sAh}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    電池組總毫安培時量(Ah)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.tAh}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    電池循環
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.cycle}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    SOC(%)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.soc}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    SOH(%)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.soh}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    均衡狀態
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.equal}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    濕度(%)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.humidity}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </Grid>
+          <Grid
+             lg={4}
+             sm={6}
+             xs={12}
+          >
+            <CardHeader 
+            classes={{ action: classes.current }}
+            subheader={"show all cells' voltage"}
+            subheaderTypographyProps={{ color: 'primary', variant: 'body2' }}
+            titleTypographyProps={{ color: 'textPrimary' }}
+            title={"電池單體電壓"}  
+            />
+            <Divider />
+            <Table>
+              <TableBody>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    電池節數
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.vM}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體1電壓(mV)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.v1}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體2電壓(mV)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.v2}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體3電壓(mV)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.v3}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體4電壓(mV)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.v4}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體5電壓(mV)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.v5}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體6電壓(mV)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.v6}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體7電壓(mV)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.v7}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                  單體8電壓(mV)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.v8}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體9電壓(mV)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.v9}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體10電壓(mV)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.v10}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                  單體11電壓(mV)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.v11}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體12電壓(mV)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.v12}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體13電壓(mV)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.v13}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                  單體14電壓(mV)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.v14}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體15電壓(mV)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.v15}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體16電壓(mV)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.v16}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </Grid>
+          <Grid
+             lg={4}
+             sm={6}
+             xs={12}
+          >
+            <CardHeader 
+            classes={{ action: classes.current }}
+            subheader={"show all cells' temperature"}
+            subheaderTypographyProps={{ color: 'primary', variant: 'body2' }}
+            titleTypographyProps={{ color: 'textPrimary' }}
+            title={"電池單體溫度"}  
+            />
+            <Divider />
+            <Table>
+              <TableBody>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體溫度數量
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.tN}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體1溫度(°C)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.t1}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體2溫度(°C)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.t2}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體3溫度(°C)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.t3}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體4溫度(°C)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.t4}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體5溫度(°C)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.t5}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體6溫度(°C)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.t6}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體7溫度(°C)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.t7}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體8溫度(°C)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.t8}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體9溫度(°C)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.t9}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體10溫度(°C)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.t10}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體11溫度(°C)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.t11}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體12溫度(°C)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.t12}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體13溫度(°C)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.t13}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體14溫度(°C)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.t14}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體15溫度(°C)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.t15}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    單體16溫度(°C)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.t16}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </Grid>
+      </Grid>
     </Card>
   );
 };

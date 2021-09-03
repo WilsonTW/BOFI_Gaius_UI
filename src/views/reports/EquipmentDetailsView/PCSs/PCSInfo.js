@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import {
   Box,
   Button,
+  Grid,
   Card,
   CardHeader,
   Divider,
@@ -98,10 +99,14 @@ const PCSInfo = ({
                     ((parseInt(equipment.con2) & 0x2000) >> 13),
                     ((parseInt(equipment.con2) & 0x4000) >> 14),
                     ((parseInt(equipment.con2) & 0x8000) >> 15)];
+
+const errorColor = ["textSecondary","error"];
+const controlColor = ["textSecondary","primary"];
 const renderError0 = [];
 const renderError1 = [];
 const renderCon1 = [];
 const renderCon2 = [];
+
 for (var i=0; i<16; i++) {
   renderError0.push(
     <TableRow>
@@ -111,7 +116,7 @@ for (var i=0; i<16; i++) {
     <TableCell>
       <Typography
         variant="body2"
-        color="textSecondary"
+        color={errorColor[error0List[i]]}
       >
         {error0List[i]}
       </Typography>
@@ -128,7 +133,7 @@ for (var i=0; i<6; i++) {
     <TableCell>
       <Typography
         variant="body2"
-        color="textSecondary"
+        color={errorColor[error1List[i]]}
       >
         {error1List[i]}
       </Typography>
@@ -145,7 +150,7 @@ for (var i=0; i<2; i++) {
     <TableCell>
       <Typography
         variant="body2"
-        color="textSecondary"
+        color={controlColor[con1List[i]]}
       >
         {con1List[i]}
       </Typography>
@@ -162,7 +167,7 @@ for (var i=0; i<8; i++) {
     <TableCell>
       <Typography
         variant="body2"
-        color="textSecondary"
+        color={controlColor[con2List[i]]}
       >
         {con2List[i]}
       </Typography>
@@ -176,523 +181,543 @@ for (var i=0; i<8; i++) {
       className={clsx(classes.root, className)}
       {...rest}
     >
-      <CardHeader title={"PCS Info : Station "+ station} />
-      <Divider />
-      <Table>
-        <TableBody>
-          {renderError0}
-          {renderError1}
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              工作模式
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {wModeName[parseInt(equipment.wMode)]}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              電池電壓(V)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.bV}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              外部電池溫度(°C)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.bT}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              AC輸入實功率(V)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.acInAcP}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              AC輸出電壓(V)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.acOutV}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              AC輸出實功率(W)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.acOutAcP}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              AC輸出頻率(Hz)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.acOutF}
-              </Typography>
-            </TableCell>
-          </TableRow>  
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              AC輸出電流(A)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.acOutC}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              電池容量(%)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.bCap}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              太陽能輸入功率(W)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.sInP1}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              電池電流(A)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.bC}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              太陽能輸入電壓(V)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.sInV1}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              設備最高溫(°C)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.maxT}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              總AC輸入實功率(W)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.acInToAcP}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              AC輸入電流(A)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.acInC}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              太陽能輸入電流(A)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.sInC1}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              AC輸出視在功率(VA)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.acOutAppP}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              AC輸入電壓(V)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.acInV}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              AC輸入頻率(Hz)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.acInF}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              AC輸出功率比例(%)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.acOutPP}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              內部溫度(°C)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.innT}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              AC輸出連接狀態
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {status0Name[((parseInt(equipment.status0) & 0xF0000) >> 16)]}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              太陽能輸入1狀態
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {status1Name[((parseInt(equipment.status0) & 0xF000000) >> 24)]}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              太陽能輸入2狀態
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {status2Name[((parseInt(equipment.status1) & 0xF))]}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              電池運行狀態
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {status3Name[((parseInt(equipment.status1) & 0xF00) >> 8)]}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              DC/AC運行狀態
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {status4Name[((parseInt(equipment.status1) & 0xF0000) >> 16)]}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              主線運行狀態
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {status5Name[((parseInt(equipment.status1) & 0xF000000) >> 24)]}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              AC總輸出功率(W)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.acOutToP}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              電池電量(W)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.bP}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              總發電量(KWh)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.totGenE}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              每小時發電量(Wh)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.genEnH}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              每天發電量(Wh)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.genEnD}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              每月發電量(Wh)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.genEnM}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              每年發電量(Wh)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.genEnY}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          {renderCon1}
-          {renderCon2}
-          {/* <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              控制 1
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.con1}
-              </Typography>
-            </TableCell>
-          </TableRow> */}
-          {/* <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              控制 2
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.con2}
-              </Typography>
-            </TableCell>
-          </TableRow> */}
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              設備備援供電設定(啟/閉)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.con3}
-              </Typography>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className={classes.fontWeightMedium}>
-              AC充電穩壓設定(啟/閉)
-            </TableCell>
-            <TableCell>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-              >
-                {equipment.con4}
-              </Typography>
-            </TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
-      {/* <Box
-        p={1}
-        display="flex"
-        flexDirection="column"
-        alignItems="flex-start"
-      >
-        <Button startIcon={<LockOpenIcon />}>
-          Reset &amp; Send Password
-        </Button>
-        <Button startIcon={<PersonIcon />}>
-          Login as Customer
-        </Button>
-      </Box> */}
+      <Grid
+          container
+          spacing={1}
+        >
+          <Grid
+             lg={4}
+             sm={6}
+             xs={12}
+            // container item xs={12} spacing={3}
+          >
+            {/* <CardHeader title={"Station: "+ station} /> */}
+            <CardHeader 
+             classes={{ action: classes.current }}
+             subheader={"Station ID : " + station}
+             subheaderTypographyProps={{ color: 'primary', variant: 'body2' }}
+             titleTypographyProps={{ color: 'textPrimary' }}
+             title={"系統基本資訊"} 
+            />
+            <Divider />
+            <Table>
+              <TableBody>
+                {/* {renderError0}
+                {renderError1} */}
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    工作模式
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {wModeName[parseInt(equipment.wMode)]}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    電池電壓(V)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.bV}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    外部電池溫度(°C)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.bT}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    AC輸入實功率(V)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.acInAcP}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    AC輸出電壓(V)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.acOutV}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    AC輸出實功率(W)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.acOutAcP}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    AC輸出頻率(Hz)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.acOutF}
+                    </Typography>
+                  </TableCell>
+                </TableRow>  
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    AC輸出電流(A)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.acOutC}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    電池容量(%)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.bCap}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    太陽能輸入功率(W)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.sInP1}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    電池電流(A)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.bC}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    太陽能輸入電壓(V)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.sInV1}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    設備最高溫(°C)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.maxT}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    總AC輸入實功率(W)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.acInToAcP}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    AC輸入電流(A)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.acInC}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    太陽能輸入電流(A)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.sInC1}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    AC輸出視在功率(VA)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.acOutAppP}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    AC輸入電壓(V)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.acInV}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    AC輸入頻率(Hz)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.acInF}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    AC輸出功率比例(%)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.acOutPP}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    內部溫度(°C)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.innT}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    AC輸出連接狀態
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {status0Name[((parseInt(equipment.status0) & 0xF0000) >> 16)]}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    太陽能輸入1狀態
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {status1Name[((parseInt(equipment.status0) & 0xF000000) >> 24)]}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    太陽能輸入2狀態
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {status2Name[((parseInt(equipment.status1) & 0xF))]}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    電池運行狀態
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {status3Name[((parseInt(equipment.status1) & 0xF00) >> 8)]}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    DC/AC運行狀態
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {status4Name[((parseInt(equipment.status1) & 0xF0000) >> 16)]}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    主線運行狀態
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {status5Name[((parseInt(equipment.status1) & 0xF000000) >> 24)]}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    AC總輸出功率(W)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.acOutToP}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    電池電量(W)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.bP}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    總發電量(KWh)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.totGenE}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    每小時發電量(Wh)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.genEnH}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    每天發電量(Wh)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.genEnD}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    每月發電量(Wh)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.genEnM}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    每年發電量(Wh)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.genEnY}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </Grid>
+          <Grid
+             lg={4}
+             sm={6}
+             xs={12}
+            // container item xs={12} spacing={3}
+          >
+            <CardHeader 
+              classes={{ action: classes.current }}
+              subheader={"show all alert detials(TRUE:1/FALSE:0)"}
+              subheaderTypographyProps={{ color: 'primary', variant: 'body2' }}
+              titleTypographyProps={{ color: 'textPrimary' }}
+              title={"系統告警資訊"} 
+            />
+            <Divider />
+            <Table>
+              <TableBody>
+                {renderError0}
+                {renderError1}
+              </TableBody>
+            </Table>
+        </Grid>
+        <Grid
+             lg={4}
+             sm={6}
+             xs={12}
+            // container item xs={12} spacing={3}
+          >
+            <CardHeader 
+              classes={{ action: classes.current }}
+              subheader={"show all control details(啟:1/閉:0)"}
+              subheaderTypographyProps={{ color: 'primary', variant: 'body2' }}
+              titleTypographyProps={{ color: 'textPrimary' }}
+              title={"系統控制狀態"} 
+            />
+            <Divider />
+            <Table>
+              <TableBody>
+                {renderCon1}
+                {renderCon2}
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    設備備援供電設定(啟/閉)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.con3}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className={classes.fontWeightMedium}>
+                    AC充電穩壓設定(啟/閉)
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {equipment.con4}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+        </Grid>
+      </Grid>
     </Card>
   );
 };

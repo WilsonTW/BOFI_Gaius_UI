@@ -26,11 +26,12 @@ const PCSs = ({
     >
       {equipment.map((pcs, i) => (
         <Grid
-          item
-          lg={4}
-          md={6}
-          xl={3}
-          xs={12}
+          // item
+          // lg={4}
+          // md={6}
+          // xl={3}
+          // xs={12}
+          item xs={12} spacing={3}
         >
           <PCSInfo equipment={pcs} station={i+1}/>
         </Grid>

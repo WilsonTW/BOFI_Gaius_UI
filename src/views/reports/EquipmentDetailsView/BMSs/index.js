@@ -25,11 +25,12 @@ const BMSs = ({
     >
       {equipment.map((bms, i) => (
         <Grid
-          item
-          lg={4}
-          md={6}
-          xl={3}
-          xs={12}
+          // item
+          // lg={4}
+          // md={6}
+          // xl={3}
+          // xs={12}
+          item xs={12} spacing={3}
         >
           <BMSInfo equipment={bms} station={i+1} />
         </Grid>
