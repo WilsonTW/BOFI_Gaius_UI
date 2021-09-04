@@ -486,7 +486,7 @@ for (var i=0; i<8; i++) {
                       variant="body2"
                       color="textSecondary"
                     >
-                      {status0Name[((parseInt(equipment.status0) & 0xF0000) >> 16)]}
+                      {status0Name[((parseInt(equipment.status0) & 0xF000000) >> 24)]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -499,7 +499,7 @@ for (var i=0; i<8; i++) {
                       variant="body2"
                       color="textSecondary"
                     >
-                      {status1Name[((parseInt(equipment.status0) & 0xF000000) >> 24)]}
+                      {status1Name[((parseInt(equipment.status0) & 0xF0000) >> 16)]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -512,7 +512,7 @@ for (var i=0; i<8; i++) {
                       variant="body2"
                       color="textSecondary"
                     >
-                      {status2Name[((parseInt(equipment.status1) & 0xF))]}
+                      {status2Name[((parseInt(equipment.status1) & 0xF000000) >> 24)]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -525,7 +525,7 @@ for (var i=0; i<8; i++) {
                       variant="body2"
                       color="textSecondary"
                     >
-                      {status3Name[((parseInt(equipment.status1) & 0xF00) >> 8)]}
+                      {status3Name[((parseInt(equipment.status1) & 0xF0000) >> 16)]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -538,7 +538,7 @@ for (var i=0; i<8; i++) {
                       variant="body2"
                       color="textSecondary"
                     >
-                      {status4Name[((parseInt(equipment.status1) & 0xF0000) >> 16)]}
+                      {status4Name[((parseInt(equipment.status1) & 0xF00) >> 8)]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -551,7 +551,7 @@ for (var i=0; i<8; i++) {
                       variant="body2"
                       color="textSecondary"
                     >
-                      {status5Name[((parseInt(equipment.status1) & 0xF000000) >> 24)]}
+                      {status5Name[((parseInt(equipment.status1) & 0xF))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -695,7 +695,8 @@ for (var i=0; i<8; i++) {
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      // color="textSecondary"
+                      color={controlColor[parseInt(equipment.con3)]}
                     >
                       {equipment.con3}
                     </Typography>
@@ -708,7 +709,8 @@ for (var i=0; i<8; i++) {
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      // color="textSecondary"
+                      color={controlColor[parseInt(equipment.con4)]}
                     >
                       {equipment.con4}
                     </Typography>

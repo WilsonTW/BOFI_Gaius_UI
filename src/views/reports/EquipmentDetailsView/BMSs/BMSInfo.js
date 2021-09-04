@@ -73,7 +73,7 @@ const BMSInfo = ({
                 </TableRow>
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
-                    電池組總電壓(V)
+                    電池組總電壓(mV)
                   </TableCell>
                   <TableCell>
                     <Typography
