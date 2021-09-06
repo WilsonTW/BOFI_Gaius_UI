@@ -44,8 +44,12 @@ const useStyles = makeStyles((theme) => ({
     width: 48
   },
   alert: {
-    color: theme.palette.error.main,
-    backgroundColor: fade(theme.palette.error.main, 0.08)
+    padding: theme.spacing(3),
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    // color: theme.palette.error.main,
+    backgroundColor: fade(theme.palette.error.main, 0.7)
   }
 }));
 
@@ -111,6 +115,7 @@ const Capacity = ({ className, ...rest }) => {
   }, [getPcs]);
   
   const radioTemp = [];
+  const alertVar = parseInt(stateDevice.pcs[0].error0) | parseInt(stateDevice.pcs[0].error1);
   if ((parseInt(stateDevice.pcs[0].error0) != 0) || (parseInt(stateDevice.pcs[0].error1) != 0)){
     radioTemp.push(
       <RadioGroup 
@@ -130,7 +135,7 @@ const Capacity = ({ className, ...rest }) => {
           control={<Radio />} 
           label="BMS異常" />
       </RadioGroup>
-    );
+    )
   }
   else{
     radioTemp.push(
@@ -142,7 +147,7 @@ const Capacity = ({ className, ...rest }) => {
         <FormControlLabel  
           variant="body2" 
           // value="auto"
-          checked="true"
+          // checked="true"
           control={<Radio />} 
           label="PCS異常" />
         <FormControlLabel  
@@ -152,12 +157,12 @@ const Capacity = ({ className, ...rest }) => {
           control={<Radio />} 
           label="BMS異常" />
       </RadioGroup>
-    );
+    )
   }
   
   return (
     <Card
-      className={clsx(classes.root, className)}
+      className={clsx((alertVar ? classes.alert : classes.root), className)}
       {...rest}
     >
       <Box flexGrow={1}>

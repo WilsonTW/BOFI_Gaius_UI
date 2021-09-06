@@ -97,7 +97,7 @@ const themesOptions = [
       },
       error: {
         /* main: '#8a85ff' */
-        main: colors.red[700]
+        main: colors.red[600]
       },
       text: {
         primary: '#e6e5e8',
