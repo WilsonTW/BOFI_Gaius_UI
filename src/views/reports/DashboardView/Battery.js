@@ -125,7 +125,7 @@ const Battery = ({ className, ...rest }) => {
             variant="body2"
             color="textPrimary"
           >
-            {temperatureBattery.label}&nbsp;&nbsp;
+            {temperatureBattery.label}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </Typography>
           <TextField 
             id="outlined-basic" 
