@@ -108,7 +108,7 @@ const Power = ({ className, ...rest }) => {
           <TextField 
             id="outlined-basic"
             // label={chargePower.value}
-            label={stateDevice.pcs[0].todayCharge}
+            label={stateDevice.pcs[0].sInP1}
             variant="outlined"
             size="normal"
           />
@@ -137,7 +137,7 @@ const Power = ({ className, ...rest }) => {
           <TextField 
             id="outlined-basic" 
             // label={dischargePower.value} 
-            label={stateDevice.pcs[0].todayDischarge}
+            label={stateDevice.pcs[0].totGenE}
             variant="outlined"
             size="normal"
           />

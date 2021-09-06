@@ -65,14 +65,6 @@ const DashboardView = () => {
           >
             <Power />
           </Grid>
-          {/* <Grid
-            item
-            lg={2}
-            sm={6}
-            xs={12}
-          >
-            <Output />
-          </Grid> */}
           <Grid
             item
             lg={3}
@@ -89,14 +81,6 @@ const DashboardView = () => {
           >
             <Capacity />
           </Grid>
-         {/*  <Grid
-            item
-            lg={2}
-            sm={6}
-            xs={12}
-          >
-            <PowerGrid />
-          </Grid> */}
           <Grid
             item
             lg={6}
@@ -111,13 +95,6 @@ const DashboardView = () => {
           >
             <RadialChart />
           </Grid>
-          {/* <Grid
-            item
-            lg={12}
-            xs={12}
-          >
-            <LineChart />
-          </Grid> */}
           <Grid
             item
             lg={12}

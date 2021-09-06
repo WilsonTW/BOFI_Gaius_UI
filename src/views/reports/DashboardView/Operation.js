@@ -1,4 +1,10 @@
-import React from 'react';
+import React, {
+  useCallback,
+  useState,
+  useEffect,
+  useContext
+} from 'react';
+import { MqttContext } from 'src/contexts/MqttContext';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
@@ -11,6 +17,7 @@ import {
   Button,
   SvgIcon
 } from '@material-ui/core';
+import useIsMountedRef from 'src/hooks/useIsMountedRef';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import Label from 'src/components/Label';
 import { Link as RouterLink } from 'react-router-dom';
@@ -60,7 +67,10 @@ const Operation = ({ className, ...rest }) => {
   const handleChange = (event) => {
     setValue(event.target.value);
   };
+  const [state, dispatch, stateDevice, dispatchDevice] = useContext(MqttContext);
   const classes = useStyles();
+  const isMountedRef = useIsMountedRef();
+  const [pcs, setPcs] = useState('pcs');
   const data = {
     value: '24,000',
     currency: '$',
@@ -78,7 +88,67 @@ const Operation = ({ className, ...rest }) => {
     value: '580',
     label: '市電側功率(KW)'
   };
+  const getPcs = useCallback(async () => {
+    try {
+      // const responsePcs = await axios.get('/api/equipments/pcs');
 
+      // if (isMountedRef.current) {
+      //   setPcs(responsePcs.data.pcs);
+      // }
+      setPcs(stateDevice.pcs[0]);
+    } catch (err) {
+      console.error(err);
+    }
+  }, [isMountedRef]);
+
+  useEffect(() => {
+    getPcs();
+  }, [getPcs]);
+  
+  const radioTemp = [];
+  if (parseInt(stateDevice.pcs[0].acInAcP) < 100){
+    radioTemp.push(
+      <RadioGroup 
+        aria-label="operation" 
+        name="operation" 
+        value={value} 
+        onChange={handleChange}>
+        <FormControlLabel  
+          variant="body2" 
+          // value="auto" 
+          checked="true"
+          control={<Radio />} 
+          label="綠電模式" />
+        <FormControlLabel  
+          variant="body2" 
+          // value="auto" 
+          control={<Radio />} 
+          label="綠灰電模式" />
+      </RadioGroup>
+    );
+  }
+  else{
+    radioTemp.push(
+      <RadioGroup 
+        aria-label="operation" 
+        name="operation" 
+        value={value} 
+        onChange={handleChange}>
+        <FormControlLabel  
+          variant="body2" 
+          // value="auto" 
+          control={<Radio />} 
+          label="綠電模式" />
+        <FormControlLabel  
+          variant="body2" 
+          // value="auto" 
+          checked="true"
+          control={<Radio />} 
+          label="綠灰電模式" />
+      </RadioGroup>
+    );
+  }
+  
   return (
     <Card
       className={clsx(classes.root, className)}
@@ -122,22 +192,26 @@ const Operation = ({ className, ...rest }) => {
           mt={4}
           mb={2}
         >
-          <RadioGroup 
+          {/* <RadioGroup 
             aria-label="operation" 
             name="operation" 
             value={value} 
-            onChange={handleChange}>
+            onChange={handleChange}
+            >
             <FormControlLabel  
               variant="body2" 
-              value="auto" 
+              // value="auto" 
+              checked="true"
               control={<Radio />} 
               label="綠電模式" />
             <FormControlLabel  
               variant="body2" 
-              value="custom" 
+              // value="auto"
+              // checked="true"
               control={<Radio />} 
               label="綠灰電模式" />
-          </RadioGroup>
+          </RadioGroup> */}
+           {radioTemp}
         </Box>
       </Box>
       {/* <Avatar className={classes.avatar}>

@@ -1,4 +1,10 @@
-import React from 'react';
+import React, {
+  useCallback,
+  useState,
+  useEffect,
+  useContext
+} from 'react';
+import { MqttContext } from 'src/contexts/MqttContext';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
@@ -9,6 +15,7 @@ import {
   makeStyles,
   TextField
 } from '@material-ui/core';
+import useIsMountedRef from 'src/hooks/useIsMountedRef';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import Label from 'src/components/Label';
 
@@ -31,7 +38,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Battery = ({ className, ...rest }) => {
+  const [state, dispatch, stateDevice, dispatchDevice] = useContext(MqttContext);
   const classes = useStyles();
+  const isMountedRef = useIsMountedRef();
+  const [bms, setBms] = useState('bms');
   const data = {
     value: '24,000',
     currency: '$',
@@ -45,7 +55,22 @@ const Battery = ({ className, ...rest }) => {
     value: '52',
     label: 'SOH(%)'
   };
+  const getBms = useCallback(async () => {
+    try {
+      // const responsePcs = await axios.get('/api/equipments/pcs');
 
+      // if (isMountedRef.current) {
+      //   setPcs(responsePcs.data.pcs);
+      // }
+      setBms(stateDevice.bms[0]);
+    } catch (err) {
+      console.error(err);
+    }
+  }, [isMountedRef]);
+
+  useEffect(() => {
+    getBms();
+  }, [getBms]);
   return (
     <Card
       className={clsx(classes.root, className)}
@@ -75,7 +100,8 @@ const Battery = ({ className, ...rest }) => {
           </Typography>
           <TextField 
             id="outlined-basic"
-            label={voltageBattery.value} 
+            // label={voltageBattery.value} 
+            label={stateDevice.bms[0].soc}
             variant="outlined"
             size="normal"
           />
@@ -103,7 +129,8 @@ const Battery = ({ className, ...rest }) => {
           </Typography>
           <TextField 
             id="outlined-basic" 
-            label={temperatureBattery.value} 
+            // label={temperatureBattery.value} 
+            label={stateDevice.bms[0].soh}
             variant="outlined"
             size="normal"
           />

@@ -93,6 +93,11 @@ const themesOptions = [
       secondary: {
         /* main: '#8a85ff' */
         main: colors.lightBlue[700]
+        // main: colors.blueGrey[600]
+      },
+      error: {
+        /* main: '#8a85ff' */
+        main: colors.red[700]
       },
       text: {
         primary: '#e6e5e8',
