@@ -491,7 +491,7 @@ for (var i=0; i<8; i++) {
                       variant="body2"
                       color="textSecondary"
                     >
-                      {status0Name[((parseInt(equipment.status0) & 0xF000000) >> 24)]}
+                      {status0Name[((parseInt(equipment.status0) & 0xF00) >> 8)]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -504,7 +504,7 @@ for (var i=0; i<8; i++) {
                       variant="body2"
                       color="textSecondary"
                     >
-                      {status1Name[((parseInt(equipment.status0) & 0xF0000) >> 16)]}
+                      {status1Name[((parseInt(equipment.status0) & 0xF))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -517,7 +517,7 @@ for (var i=0; i<8; i++) {
                       variant="body2"
                       color="textSecondary"
                     >
-                      {status2Name[((parseInt(equipment.status1) & 0xF000000) >> 24)]}
+                      {status2Name[((parseInt(equipment.status1) & 0xF00) >> 8)]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -530,7 +530,7 @@ for (var i=0; i<8; i++) {
                       variant="body2"
                       color="textSecondary"
                     >
-                      {status3Name[((parseInt(equipment.status1) & 0xF0000) >> 16)]}
+                      {status3Name[((parseInt(equipment.status1) & 0xF))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -543,7 +543,7 @@ for (var i=0; i<8; i++) {
                       variant="body2"
                       color="textSecondary"
                     >
-                      {status4Name[((parseInt(equipment.status1) & 0xF00) >> 8)]}
+                      {status4Name[((parseInt(equipment.status1) & 0xF000000) >> 24)]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -556,7 +556,7 @@ for (var i=0; i<8; i++) {
                       variant="body2"
                       color="textSecondary"
                     >
-                      {status5Name[((parseInt(equipment.status1) & 0xF))]}
+                      {status5Name[((parseInt(equipment.status1) & 0xF0000) >> 16)]}
                     </Typography>
                   </TableCell>
                 </TableRow>
