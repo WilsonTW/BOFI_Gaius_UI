@@ -279,6 +279,7 @@ for (var i=0; i<8; i++) {
                       color="textSecondary"
                     >
                       {equipment.acOutAcP}
+                      {/* {(parseInt(equipment.acOutAcP))} */}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -330,6 +331,7 @@ for (var i=0; i<8; i++) {
                       variant="body2"
                       color="textSecondary"
                     >
+                      {/* {equipment.sInP1} */}
                       {equipment.sInP1}
                     </Typography>
                   </TableCell>
@@ -343,6 +345,7 @@ for (var i=0; i<8; i++) {
                       variant="body2"
                       color="textSecondary"
                     >
+                      {/* {equipment.bC} */}
                       {equipment.bC}
                     </Typography>
                   </TableCell>
@@ -421,6 +424,8 @@ for (var i=0; i<8; i++) {
                       variant="body2"
                       color="textSecondary"
                     >
+                      {/* {((parseInt(equipment.acOutAppP) >> 24) | ((parseInt(equipment.acOutAppP) << 8) & 0x00FF0000) | ((parseInt(equipment.acOutAppP) >> 8) & 0x0000FF00) | ((parseInt(equipment.acOutAppP) << 24)))} */}
+                      {/* {((parseInt(equipment.acOutAppP) >> 16))} */}
                       {equipment.acOutAppP}
                     </Typography>
                   </TableCell>
