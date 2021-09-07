@@ -165,7 +165,7 @@ const EarningsSegmentation = ({ className, ...rest }) => {
         zoom: false
       },
       colors: ['#52d869'],
-      labels: ['綠電比例'],
+      labels: ['累積綠電輸出百分比'],
       plotOptions: {
         radialBar: {
           hollow: {
@@ -235,7 +235,7 @@ const EarningsSegmentation = ({ className, ...rest }) => {
           variant="h4"
           color="textPrimary"
       >
-        儲能系統運行資訊
+        電力供給狀態
       </Typography>
       {/* <Divider /> */}
       {/* <Box
@@ -264,72 +264,51 @@ const EarningsSegmentation = ({ className, ...rest }) => {
               輸出功率設定
             </Typography> */}
             <TextField
-              label="總輸出功率(W)"
-              value={stateDevice.pcs[0].acOutAcP}
+              label="綠電輸出度電(KWh)"
+              value={stateDevice.pcs[0].sInP1}
               // onChange={handleChange}
+              fullWidth
               variant="outlined"
               margin="normal"
               InputLabelProps={{style: {fontSize: 20}}} // font size of input label
             />
              <TextField
-              label="電池容量(%)"
-              value={stateDevice.pcs[0].bCap}
+              label="綠灰電輸出度電(KWh)"
+              value={stateDevice.pcs[0].acInAcP}
               // onChange={handleChange}
+              fullWidth
               variant="outlined"
               margin="normal"
               InputLabelProps={{style: {fontSize: 20}}} // font size of input label
             />
           </Grid>
-          <Grid
+          {/* <Grid
             container justify="flex-end"
             item
             lg={6}
             xs={12}
-          >
+          > */}
             {/* <FormControlLabel
               control={<IOSSwitch checked={state.checkedB} onChange={handleChangeswitch} name="checkedB" />}
               label="iOS style"
             /> */}
-           <Typography component="div">
+           {/* <Typography component="div">
             <Grid component="label" container alignItems="center" spacing={1}>
               <Grid item>閒置</Grid>
               <Grid item>
-                {/* <IOSSwitch checked={state.checkedC} onChange={handleChangeswitch} name="checkedC" /> */}
                 {iotSwitch}
               </Grid>
               <Grid item>供電</Grid>
             </Grid>
-          </Typography>
-          </Grid>
+          </Typography> */}
+          {/* </Grid> */}
       </Box>
-      <ApexChart
+      {/* <ApexChart
         options={data.options}
         series={data.series}
         type="radialBar"
         height="300"
-      />
-      {/* <Divider />
-      <Box display="flex">
-        {earnings.labels.map((label, i) => (
-          <div
-            key={label}
-            className={classes.item}
-          >
-            <Typography
-              variant="body1"
-              color="textSecondary"
-            >
-              {label}
-            </Typography>
-            <Typography
-              variant="h3"
-              color="textPrimary"
-            >
-              {earnings.datasets[0].data[i]}
-            </Typography>
-          </div>
-        ))}
-      </Box> */}
+      /> */}
       </CardContent>
     </Card>
   );

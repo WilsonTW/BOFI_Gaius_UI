@@ -23,6 +23,7 @@ import Battery from './Battery';
 import RadialChart from './RadialChart';
 import LineChart from './LineChart';
 import EarningsSegmentation from './EarningsSegmentation';
+import EarningsSegmentationCopy from './EarningsSegmentation_copy';
 // import HookMqtt from 'src/components/MqttHook/';
 // import { ProviderContext } from 'src/contexts/test/provider';
 
@@ -93,7 +94,8 @@ const DashboardView = () => {
             lg={6}
             xs={12}
           >
-            <RadialChart />
+            {/* <RadialChart /> */}
+            <EarningsSegmentationCopy />
           </Grid>
           <Grid
             item

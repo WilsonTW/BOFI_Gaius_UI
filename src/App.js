@@ -50,7 +50,7 @@ const App = () => {
                   <ScrollReset />
                   <GoogleAnalytics />
                   <CookiesNotification />
-                  <SettingsNotification />
+                  {/* <SettingsNotification /> */}
                   {renderRoutes(routes)}
                 </AuthProvider>
               </MqttProvider>

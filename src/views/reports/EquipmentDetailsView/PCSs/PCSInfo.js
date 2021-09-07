@@ -245,7 +245,7 @@ for (var i=0; i<8; i++) {
                 </TableRow>
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
-                    AC輸入實功率(V)
+                    AC輸入實功率(Ｗ)
                   </TableCell>
                   <TableCell>
                     <Typography
