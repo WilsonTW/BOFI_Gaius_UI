@@ -45,9 +45,9 @@ const PCSInfo = ({
                      '電池開路',
                      '電池電壓過低',
                      '電池低電位',
-                     '太陽能輸入2電壓過高',
+                    //  '太陽能輸入2電壓過高',
                      '太陽能輸入1電壓過高',
-                     '太陽能輸入2欠壓',
+                    //  '太陽能輸入2欠壓',
                      '太陽能輸入1欠壓'];
   const error1Name =['AC輸入波型失真','EPO啟動','負載過載','溫度超限','AC輸入相位錯誤','AC輸入孤島'];
   const wModeName = ['開機模式', '待機模式', '旁路模式', '電池模式', '故障模式', '混合模式', '充電模式'];
@@ -79,9 +79,9 @@ const PCSInfo = ({
                      ((parseInt(equipment.error0) & 0x200) >> 9),
                      ((parseInt(equipment.error0) & 0x400) >> 10),
                      ((parseInt(equipment.error0) & 0x800) >> 11),
-                     ((parseInt(equipment.error0) & 0x1000) >> 12),
+                    //  ((parseInt(equipment.error0) & 0x1000) >> 12),
                      ((parseInt(equipment.error0) & 0x2000) >> 13),
-                     ((parseInt(equipment.error0) & 0x4000) >> 14),
+                    //  ((parseInt(equipment.error0) & 0x4000) >> 14),
                      ((parseInt(equipment.error0) & 0x8000) >> 15)];
   const error1List =[((parseInt(equipment.error1) & 0x400) >> 10),
                      ((parseInt(equipment.error1) & 0x800) >> 11),
@@ -107,7 +107,7 @@ const renderError1 = [];
 const renderCon1 = [];
 const renderCon2 = [];
 
-for (var i=0; i<16; i++) {
+for (var i=0; i<14; i++) {
   renderError0.push(
     <TableRow>
     <TableCell className={classes.fontWeightMedium}>
@@ -508,7 +508,7 @@ for (var i=0; i<8; i++) {
                     </Typography>
                   </TableCell>
                 </TableRow>
-                <TableRow>
+                {/* <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
                     太陽能輸入2狀態
                   </TableCell>
@@ -520,7 +520,7 @@ for (var i=0; i<8; i++) {
                       {status2Name[((parseInt(equipment.status1) & 0xF00) >> 8)]}
                     </Typography>
                   </TableCell>
-                </TableRow>
+                </TableRow> */}
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
                     電池運行狀態
@@ -573,7 +573,7 @@ for (var i=0; i<8; i++) {
                     </Typography>
                   </TableCell>
                 </TableRow>
-                <TableRow>
+                {/* <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
                     電池電量(W)
                   </TableCell>
@@ -585,7 +585,7 @@ for (var i=0; i<8; i++) {
                       {equipment.bP}
                     </Typography>
                   </TableCell>
-                </TableRow>
+                </TableRow> */}
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
                     總發電量(KWh)
