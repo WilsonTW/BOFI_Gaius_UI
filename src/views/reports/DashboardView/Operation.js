@@ -12,6 +12,7 @@ import {
   Box,
   Card,
   Typography,
+  fade,
   makeStyles,
   TextField,
   Button,
@@ -41,6 +42,27 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.secondary.contrastText,
     height: 48,
     width: 48
+  },
+  greenMode: {
+    padding: theme.spacing(3),
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor:  fade(theme.palette.green.main, 0.75)
+    // backgroundColor:  theme.palette.green.main
+    // color: theme.palette.secondary.contrastText,
+    // height: 48,
+    // width: 48
+  },
+  greyMode: {
+    padding: theme.spacing(3),
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor:  fade(theme.palette.grey.main, 0.7)
+    // color: theme.palette.secondary.contrastText,
+    // height: 48,
+    // width: 48
   }
 }));
 
@@ -106,6 +128,7 @@ const Operation = ({ className, ...rest }) => {
   }, [getPcs]);
   
   const radioTemp = [];
+  const modeVar = parseInt(stateDevice.pcs[0].acInAcP) < 100;
   if (parseInt(stateDevice.pcs[0].acInAcP) < 100){
     radioTemp.push(
       <RadioGroup 
@@ -151,7 +174,8 @@ const Operation = ({ className, ...rest }) => {
   
   return (
     <Card
-      className={clsx(classes.root, className)}
+      // className={clsx(classes.root, className)}
+      className={clsx((modeVar ? classes.greenMode : classes.greyMode), className)}
       {...rest}
     >
       <Box flexGrow={1}>
