@@ -62,6 +62,18 @@ const themesOptions = [
         /* main: '#5850EC' */
         main: colors.blue[600]
       },
+      error: {
+        /* main: '#e53935' */
+        main: colors.red[600]
+      },
+      green: {
+        main: '#52d869'
+        // main: colors.green[600]
+      },
+      grey: {
+        /* main: '#546e7a' */
+        main: colors.blueGrey[600]
+      },
       text: {
         primary: colors.blueGrey[900],
         secondary: colors.blueGrey[600]

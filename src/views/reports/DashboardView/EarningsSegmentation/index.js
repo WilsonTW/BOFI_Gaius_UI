@@ -12,6 +12,8 @@ import {
   Card,
   CardHeader,
   Divider,
+  Button,
+  SvgIcon,
   Typography,
   makeStyles,
   useTheme,
@@ -21,6 +23,7 @@ import {
 } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import Switch from '@material-ui/core/Switch';
+import { Monitor as MonitorIcon } from 'react-feather';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import GenericMoreButton from 'src/components/GenericMoreButton';
 import axios from 'src/utils/axios';
@@ -290,16 +293,29 @@ const EarningsSegmentation = ({ className, ...rest }) => {
               control={<IOSSwitch checked={state.checkedB} onChange={handleChangeswitch} name="checkedB" />}
               label="iOS style"
             /> */}
-           <Typography component="div">
-            <Grid component="label" container alignItems="center" spacing={1}>
-              <Grid item>閒置</Grid>
-              <Grid item>
-                {/* <IOSSwitch checked={state.checkedC} onChange={handleChangeswitch} name="checkedC" /> */}
-                {iotSwitch}
+            <Typography component="div">
+              <Grid component="label" container alignItems="center" spacing={1}>
+                <Grid item>閒置</Grid>
+                <Grid item>
+                  {iotSwitch}
+                </Grid>
+                <Grid item>供電</Grid>
               </Grid>
-              <Grid item>供電</Grid>
-            </Grid>
-          </Typography>
+            </Typography>
+            {/* <Button
+              color="secondary"
+              variant="contained"
+              // component={RouterLink}
+              // to="/app/reports/equipments"
+              startIcon={
+                <SvgIcon fontSize="normal">
+                  <MonitorIcon />
+                </SvgIcon>
+              }
+              size="normal"
+            >
+              Equipment
+            </Button> */}
           </Grid>
       </Box>
       <ApexChart
