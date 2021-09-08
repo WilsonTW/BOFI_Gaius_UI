@@ -235,7 +235,7 @@ const EarningsSegmentation = ({ className, ...rest }) => {
           variant="h4"
           color="textPrimary"
       >
-        電力供給狀態
+        當前電力供給狀態
       </Typography>
       {/* <Divider /> */}
       {/* <Box
@@ -257,14 +257,8 @@ const EarningsSegmentation = ({ className, ...rest }) => {
             lg={6}
             xs={12}
           >
-           {/*  <Typography
-              variant="h4"
-              color="textPrimary"
-            >
-              輸出功率設定
-            </Typography> */}
             <TextField
-              label="綠電輸出度電(KWh)"
+              label="單次綠電輸出度電(KWh)"
               value={stateDevice.pcs[0].sInP1}
               // onChange={handleChange}
               fullWidth
@@ -273,7 +267,7 @@ const EarningsSegmentation = ({ className, ...rest }) => {
               InputLabelProps={{style: {fontSize: 20}}} // font size of input label
             />
              <TextField
-              label="綠灰電輸出度電(KWh)"
+              label="單次綠灰電輸出度電(KWh)"
               value={stateDevice.pcs[0].acInAcP}
               // onChange={handleChange}
               fullWidth

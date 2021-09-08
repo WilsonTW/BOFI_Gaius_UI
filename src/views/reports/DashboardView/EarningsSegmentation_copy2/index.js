@@ -12,10 +12,7 @@ import {
   Card,
   CardHeader,
   Divider,
-  Button,
-  SvgIcon,
   Typography,
-  fade,
   makeStyles,
   useTheme,
   Grid,
@@ -24,8 +21,6 @@ import {
 } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import Switch from '@material-ui/core/Switch';
-import { Zap as ZapIcon } from 'react-feather';
-import Label from 'src/components/Label';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import GenericMoreButton from 'src/components/GenericMoreButton';
 import axios from 'src/utils/axios';
@@ -170,7 +165,7 @@ const EarningsSegmentation = ({ className, ...rest }) => {
         zoom: false
       },
       colors: ['#52d869'],
-      labels: ['綠電比例'],
+      labels: ['累積綠電輸出百分比'],
       plotOptions: {
         radialBar: {
           hollow: {
@@ -196,35 +191,6 @@ const EarningsSegmentation = ({ className, ...rest }) => {
     },
     series: [(100 * parseInt(stateDevice.pcs[0].sInP1)/(parseInt(stateDevice.pcs[0].acInAcP)+parseInt(stateDevice.pcs[0].sInP1))).toFixed(1)]
   };
-
-  const DischargeButton = withStyles((theme) => ({
-    root: {
-      color: theme.palette.text.primary,
-      backgroundColor: fade(theme.palette.green.main, 0.75),
-      '&:hover': {
-        backgroundColor: fade(theme.palette.green.main, 0.75),
-      }
-    }
-  }))(Button);
-  const IdleButton = withStyles((theme) => ({
-    root: {
-      color: theme.palette.text.primary,
-      backgroundColor: fade(theme.palette.grey.main, 0.7),
-      '&:hover': {
-        backgroundColor: fade(theme.palette.grey.main, 0.7),
-      }
-    }
-  }))(Button);
-  const ChargeButton = withStyles((theme) => ({
-    root: {
-      color: theme.palette.text.primary,
-      backgroundColor: fade(theme.palette.primary.main, 1.0),
-      '&:hover': {
-        backgroundColor: fade(theme.palette.primary.main, 1.0),
-      }
-    }
-  }))(Button);
-
   const getEarnings = useCallback(async () => {
     try  {
       const response = await axios.get('/api/reports/earnings');
@@ -244,7 +210,7 @@ const EarningsSegmentation = ({ className, ...rest }) => {
   if (!earnings) {
     return null;
   }
-/*
+
   const iotSwitch = [];
   if((parseInt(stateDevice.pcs[0].status1) & 0xF) == 2){
     iotSwitch.push(
@@ -253,48 +219,6 @@ const EarningsSegmentation = ({ className, ...rest }) => {
   }else{
     iotSwitch.push(
       <IOSSwitch checked={false} name="checkedC" />
-    )
-  }
-*/
-  const sysDirection = [];
-  if((parseInt(stateDevice.pcs[0].status1) & 0xF) == 2){
-    sysDirection.push(
-      <DischargeButton
-        variant="contained"
-        startIcon={
-          <SvgIcon fontSize="normal">
-            <ZapIcon />
-          </SvgIcon>
-        }
-      >
-        系統供電中
-      </DischargeButton>
-    )
-  }else if ((parseInt(stateDevice.pcs[0].status1) & 0xF) == 1){
-    sysDirection.push(
-      <ChargeButton
-        variant="contained"
-        startIcon={
-          <SvgIcon fontSize="normal">
-            <ZapIcon />
-          </SvgIcon>
-        }
-      >
-        系統充電中
-      </ChargeButton>
-    )
-  }else{
-    sysDirection.push(
-      <IdleButton
-        variant="contained"
-        startIcon={
-          <SvgIcon fontSize="normal">
-            <ZapIcon />
-          </SvgIcon>
-        }
-      >
-        系統閒置中
-      </IdleButton>
     )
   }
   return (
@@ -311,7 +235,7 @@ const EarningsSegmentation = ({ className, ...rest }) => {
           variant="h4"
           color="textPrimary"
       >
-        儲能系統運行資訊
+        累計電力供給狀態
       </Typography>
       {/* <Divider /> */}
       {/* <Box
@@ -333,91 +257,52 @@ const EarningsSegmentation = ({ className, ...rest }) => {
             lg={6}
             xs={12}
           >
-           {/*  <Typography
-              variant="h4"
-              color="textPrimary"
-            >
-              輸出功率設定
-            </Typography> */}
             <TextField
-              label="總輸出功率(W)"
-              value={stateDevice.pcs[0].acOutAcP}
+              label="累計綠電輸出度電(KWh)"
+              value={stateDevice.pcs[0].sInP1}
               // onChange={handleChange}
+              fullWidth
               variant="outlined"
               margin="normal"
               InputLabelProps={{style: {fontSize: 20}}} // font size of input label
             />
              <TextField
-              label="電池容量(%)"
-              value={stateDevice.pcs[0].bCap}
+              label="累計綠灰電輸出度電(KWh)"
+              value={stateDevice.pcs[0].acInAcP}
               // onChange={handleChange}
+              fullWidth
               variant="outlined"
               margin="normal"
               InputLabelProps={{style: {fontSize: 20}}} // font size of input label
             />
           </Grid>
-          <Grid
+          {/* <Grid
             container justify="flex-end"
             item
             lg={6}
             xs={12}
-          >
+          > */}
             {/* <FormControlLabel
               control={<IOSSwitch checked={state.checkedB} onChange={handleChangeswitch} name="checkedB" />}
               label="iOS style"
             /> */}
-            {/* <Typography component="div">
-              <Grid component="label" container alignItems="center" spacing={1}>
-                <Grid item>閒置</Grid>
-                <Grid item>
-                  {iotSwitch}
-                </Grid>
-                <Grid item>供電</Grid>
+           {/* <Typography component="div">
+            <Grid component="label" container alignItems="center" spacing={1}>
+              <Grid item>閒置</Grid>
+              <Grid item>
+                {iotSwitch}
               </Grid>
-            </Typography> */}
-            <Typography component="div">
-                {/* <DischargeButton
-                  variant="contained"
-                  startIcon={
-                    <SvgIcon fontSize="normal">
-                      <ZapIcon />
-                    </SvgIcon>
-                  }
-                >
-                  系統供電中
-                </DischargeButton> */}
-                {sysDirection}
-            </Typography>
-          </Grid>
+              <Grid item>供電</Grid>
+            </Grid>
+          </Typography> */}
+          {/* </Grid> */}
       </Box>
-      <ApexChart
+      {/* <ApexChart
         options={data.options}
         series={data.series}
         type="radialBar"
         height="300"
-      />
-      {/* <Divider />
-      <Box display="flex">
-        {earnings.labels.map((label, i) => (
-          <div
-            key={label}
-            className={classes.item}
-          >
-            <Typography
-              variant="body1"
-              color="textSecondary"
-            >
-              {label}
-            </Typography>
-            <Typography
-              variant="h3"
-              color="textPrimary"
-            >
-              {earnings.datasets[0].data[i]}
-            </Typography>
-          </div>
-        ))}
-      </Box> */}
+      /> */}
       </CardContent>
     </Card>
   );

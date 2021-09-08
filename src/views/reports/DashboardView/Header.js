@@ -83,6 +83,14 @@ const Header = ({ className, ...rest }) => {
           BESS Overview
         </Typography>
       </Grid>
+      <Grid item>
+      <Typography
+          variant="h5"
+          color="textPrimary"
+        >
+          系統時間
+        </Typography>
+      </Grid>
       {/* <Grid item>
         <Button
           ref={actionRef}

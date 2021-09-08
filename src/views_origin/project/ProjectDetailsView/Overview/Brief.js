@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import Markdown from 'react-markdown/with-html';
+import Markdown from 'react-markdown';
 import {
   Box,
   Chip,

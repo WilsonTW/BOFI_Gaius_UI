@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import moment from 'moment';
-import Markdown from 'react-markdown/with-html';
+import Markdown from 'react-markdown';
 import {
   Avatar,
   Box,

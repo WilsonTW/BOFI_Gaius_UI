@@ -56,7 +56,8 @@ const themesOptions = [
       },
       primary: {
         /* main: colors.indigo[600] */
-        main: colors.grey[800]
+        main: colors.lightBlue[700]
+        // main: colors.grey[800]
       },
       secondary: {
         /* main: '#5850EC' */
