@@ -86,7 +86,7 @@ const Header = ({ className, equipment, ...rest }) => {
       </Grid>
       <Grid item>
       <Typography
-          variant="h5"
+          variant="h6"
           color="textPrimary"
         >
           {/* 系統時間 */}
