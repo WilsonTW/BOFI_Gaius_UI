@@ -24,7 +24,6 @@ import RadialChart from './RadialChart';
 import LineChart from './LineChart';
 import EarningsSegmentation from './EarningsSegmentation';
 import EarningsSegmentationCopy from './EarningsSegmentation_copy';
-import EarningsSegmentationCopy2 from './EarningsSegmentation_copy2';
 // import HookMqtt from 'src/components/MqttHook/';
 // import { ProviderContext } from 'src/contexts/test/provider';
 
@@ -91,50 +90,14 @@ const DashboardView = () => {
             <EarningsSegmentation />
           </Grid>
           <Grid
-            item
-            container
-            lg={6}
-            xs={12}
-            direction="row-reverse"
-            justifyContent="space-evenly"
-            alignItems="stretch"
-          >
-            <Grid
               item
               // container
-              lg={12}
+              lg={6}
               xs={12}
             >
               {/* <RadialChart /> */}
               <EarningsSegmentationCopy />
             </Grid>
-            <Grid
-              item
-              // container
-              lg={12}
-              xs={12}
-            >
-              {/* <RadialChart /> */}
-              <EarningsSegmentationCopy2 />
-            </Grid>
-          </Grid>
-          
-          {/* <Grid
-            item
-            lg={5}
-            xl={4}
-            xs={12}
-          >
-            <TeamTasks />
-          </Grid>
-          <Grid
-            item
-            lg={7}
-            xl={8}
-            xs={12}
-          >
-            <LatestProjects />
-          </Grid> */}
         </Grid>
       </Container>
     </Page>

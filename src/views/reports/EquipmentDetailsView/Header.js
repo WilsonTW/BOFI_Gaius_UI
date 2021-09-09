@@ -56,6 +56,14 @@ const Header = ({ className, equipment, ...rest }) => {
           Equipment Overview
         </Typography>
       </Grid>
+      <Grid item>
+      <Typography
+          variant="h5"
+          color="textPrimary"
+        >
+          系統時間
+        </Typography>
+      </Grid>
       {/* <Grid item>
         <Button
           color="secondary"

@@ -231,23 +231,23 @@ const EarningsSegmentation = ({ className, ...rest }) => {
         action={<GenericMoreButton />}
         title="Earnings Segmentation"
       /> */}
-      <Typography
-          variant="h4"
-          color="textPrimary"
-      >
-        當前電力供給狀態
-      </Typography>
-      {/* <Divider /> */}
-      {/* <Box
-        p={3}
-        position="relative"
-        minHeight={320}
-      >
-        <Chart data={earnings} />
-      </Box> */}
       <Box 
         display="flex"
-        mt={3}
+        mt={1}
+        position="relative"
+        minHeight={10}
+      >
+        <Typography
+            variant="h4"
+            color="textPrimary"
+            mt={3}
+        >
+          單次電力供給狀態
+        </Typography>
+      </Box>
+      <Box 
+        display="flex"
+        mt={2}
         position="relative"
         minHeight={10}
       >
@@ -276,33 +276,62 @@ const EarningsSegmentation = ({ className, ...rest }) => {
               InputLabelProps={{style: {fontSize: 20}}} // font size of input label
             />
           </Grid>
-          {/* <Grid
-            container justify="flex-end"
+      </Box>
+      <Box 
+        display="flex"
+        mt={5}
+        position="relative"
+        minHeight={6}
+      >
+      {/* <Divider /> */}
+      </Box>
+      <Divider />
+      <Box 
+        display="flex"
+        mt={5}
+        position="relative"
+        minHeight={10}
+      >
+        <Typography
+            variant="h4"
+            color="textPrimary"
+            mt={3}
+        >
+          累計電力供給狀態
+        </Typography>
+     </Box>
+      <Box 
+        display="flex"
+        mt={2}
+        position="relative"
+        minHeight={10}
+      >
+          <Grid
+            container justify="flex-start"
             item
             lg={6}
             xs={12}
-          > */}
-            {/* <FormControlLabel
-              control={<IOSSwitch checked={state.checkedB} onChange={handleChangeswitch} name="checkedB" />}
-              label="iOS style"
-            /> */}
-           {/* <Typography component="div">
-            <Grid component="label" container alignItems="center" spacing={1}>
-              <Grid item>閒置</Grid>
-              <Grid item>
-                {iotSwitch}
-              </Grid>
-              <Grid item>供電</Grid>
-            </Grid>
-          </Typography> */}
-          {/* </Grid> */}
+          >
+           <TextField
+              label="累計次綠電輸出度電(KWh)"
+              value={stateDevice.pcs[0].sInP1}
+              // onChange={handleChange}
+              fullWidth
+              variant="outlined"
+              margin="normal"
+              InputLabelProps={{style: {fontSize: 20}}} // font size of input label
+            />
+             <TextField
+              label="累計綠灰電輸出度電(KWh)"
+              value={stateDevice.pcs[0].acInAcP}
+              // onChange={handleChange}
+              fullWidth
+              variant="outlined"
+              margin="normal"
+              InputLabelProps={{style: {fontSize: 20}}} // font size of input label
+            />
+          </Grid>
       </Box>
-      {/* <ApexChart
-        options={data.options}
-        series={data.series}
-        type="radialBar"
-        height="300"
-      /> */}
       </CardContent>
     </Card>
   );

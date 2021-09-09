@@ -307,12 +307,20 @@ const EarningsSegmentation = ({ className, ...rest }) => {
         action={<GenericMoreButton />}
         title="Earnings Segmentation"
       /> */}
-      <Typography
-          variant="h4"
-          color="textPrimary"
+      <Box 
+        display="flex"
+        mt={1}
+        position="relative"
+        minHeight={10}
       >
-        儲能系統運行資訊
-      </Typography>
+        <Typography
+            variant="h4"
+            color="textPrimary"
+            mt={3}
+        >
+          儲能系統運行資訊
+        </Typography>
+      </Box>
       {/* <Divider /> */}
       {/* <Box
         p={3}
@@ -375,19 +383,16 @@ const EarningsSegmentation = ({ className, ...rest }) => {
                 <Grid item>供電</Grid>
               </Grid>
             </Typography> */}
-            <Typography component="div">
-                {/* <DischargeButton
-                  variant="contained"
-                  startIcon={
-                    <SvgIcon fontSize="normal">
-                      <ZapIcon />
-                    </SvgIcon>
-                  }
-                >
-                  系統供電中
-                </DischargeButton> */}
-                {sysDirection}
-            </Typography>
+            <Box 
+              display="flex"
+              mt={2}
+              position="relative"
+              minHeight={10}
+            >
+              <Typography component="div">
+                  {sysDirection}
+              </Typography>
+            </Box>
           </Grid>
       </Box>
       <ApexChart
