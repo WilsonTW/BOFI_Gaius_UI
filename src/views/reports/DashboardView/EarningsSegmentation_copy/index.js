@@ -319,7 +319,7 @@ const EarningsSegmentation = ({ className, ...rest }) => {
             xs={12}
           >
            <TextField
-              label="累計次綠電輸出度電(KWh)"
+              label="累計綠電輸出度電(KWh)"
               // value={stateDevice.pcs[0].sInP1}
               value={greenOutPower}
               // onChange={handleChange}
