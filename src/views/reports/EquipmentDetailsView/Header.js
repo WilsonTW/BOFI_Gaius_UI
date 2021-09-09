@@ -1,4 +1,10 @@
-import React from 'react';
+import React, {
+  useCallback,
+  useState,
+  useEffect,
+  useContext
+} from 'react';
+import { MqttContext } from 'src/contexts/MqttContext';
 import { Link as RouterLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
@@ -12,6 +18,7 @@ import {
   makeStyles
 } from '@material-ui/core';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import useIsMountedRef from 'src/hooks/useIsMountedRef';
 import { Edit as EditIcon } from 'react-feather';
 
 const useStyles = makeStyles(() => ({
@@ -20,6 +27,27 @@ const useStyles = makeStyles(() => ({
 
 const Header = ({ className, equipment, ...rest }) => {
   const classes = useStyles();
+
+  const [state, dispatch, stateDevice, dispatchDevice] = useContext(MqttContext);
+  const isMountedRef = useIsMountedRef();
+  const [pcs, setPcs] = useState('pcs');
+
+  const getPcs = useCallback(async () => {
+    try {
+      // const responsePcs = await axios.get('/api/equipments/pcs');
+
+      // if (isMountedRef.current) {
+      //   setPcs(responsePcs.data.pcs);
+      // }
+      setPcs(stateDevice.pcs[0]);
+    } catch (err) {
+      console.error(err);
+    }
+  }, [isMountedRef]);
+
+  useEffect(() => {
+    getPcs();
+  }, [getPcs]);
 
   return (
     <Grid
@@ -61,7 +89,8 @@ const Header = ({ className, equipment, ...rest }) => {
           variant="h5"
           color="textPrimary"
         >
-          系統時間
+          {/* 系統時間 */}
+          {stateDevice.pcs[0].sysTime}
         </Typography>
       </Grid>
       {/* <Grid item>
