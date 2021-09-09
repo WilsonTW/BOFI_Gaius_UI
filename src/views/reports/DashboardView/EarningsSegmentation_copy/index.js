@@ -221,6 +221,10 @@ const EarningsSegmentation = ({ className, ...rest }) => {
       <IOSSwitch checked={false} name="checkedC" />
     )
   }
+
+  const greenInPercent = parseInt(stateDevice.pcs[0].sInP1)/(parseInt(stateDevice.pcs[0].acInAcP)+parseInt(stateDevice.pcs[0].sInP1));
+  const greenOutPower = (parseInt(stateDevice.pcs[0].acOutAcP) * greenInPercent).toFixed(1);
+  const greyOutPower = (parseInt(stateDevice.pcs[0].acOutAcP) - greenOutPower).toFixed(1);
   return (
     <Card
       className={clsx(classes.root, className)}
@@ -259,7 +263,8 @@ const EarningsSegmentation = ({ className, ...rest }) => {
           >
             <TextField
               label="單次綠電輸出度電(KWh)"
-              value={stateDevice.pcs[0].sInP1}
+              // value={stateDevice.pcs[0].sInP1}
+              value={greenOutPower}
               // onChange={handleChange}
               fullWidth
               variant="outlined"
@@ -268,7 +273,8 @@ const EarningsSegmentation = ({ className, ...rest }) => {
             />
              <TextField
               label="單次綠灰電輸出度電(KWh)"
-              value={stateDevice.pcs[0].acInAcP}
+              // value={stateDevice.pcs[0].acInAcP}
+              value={greyOutPower}
               // onChange={handleChange}
               fullWidth
               variant="outlined"
@@ -314,7 +320,8 @@ const EarningsSegmentation = ({ className, ...rest }) => {
           >
            <TextField
               label="累計次綠電輸出度電(KWh)"
-              value={stateDevice.pcs[0].sInP1}
+              // value={stateDevice.pcs[0].sInP1}
+              value={greenOutPower}
               // onChange={handleChange}
               fullWidth
               variant="outlined"
@@ -323,7 +330,8 @@ const EarningsSegmentation = ({ className, ...rest }) => {
             />
              <TextField
               label="累計綠灰電輸出度電(KWh)"
-              value={stateDevice.pcs[0].acInAcP}
+              // value={stateDevice.pcs[0].acInAcP}
+              value={greyOutPower}
               // onChange={handleChange}
               fullWidth
               variant="outlined"

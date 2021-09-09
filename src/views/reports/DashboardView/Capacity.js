@@ -115,7 +115,7 @@ const Capacity = ({ className, ...rest }) => {
   }, [getPcs]);
   
   const radioTemp = [];
-  const alertVar = parseInt(stateDevice.pcs[0].error0) | parseInt(stateDevice.pcs[0].error1);
+  const alertVar = (parseInt(stateDevice.pcs[0].error0) & 0xAFFF) | parseInt(stateDevice.pcs[0].error1);
   if ((parseInt(stateDevice.pcs[0].error0) != 0) || (parseInt(stateDevice.pcs[0].error1) != 0)){
     radioTemp.push(
       <RadioGroup 
