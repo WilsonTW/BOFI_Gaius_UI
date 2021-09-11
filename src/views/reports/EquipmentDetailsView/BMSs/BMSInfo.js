@@ -60,7 +60,7 @@ const BMSInfo = ({
               <TableBody>
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
-                    電池組充電電流(Ａ)
+                    電池組充放電電流(Ａ)
                   </TableCell>
                   <TableCell>
                     <Typography
