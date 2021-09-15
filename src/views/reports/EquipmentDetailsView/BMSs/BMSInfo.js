@@ -33,7 +33,10 @@ const BMSInfo = ({
   ...rest
 }) => {
   const classes = useStyles();
-
+  const warningName =['正常',
+                     '低於下限',
+                     '高於上限',
+                     '其他錯誤'];
   return (
     <Card
       className={clsx(classes.root, className)}
@@ -70,6 +73,14 @@ const BMSInfo = ({
                       {equipment.tA}
                     </Typography>
                   </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
+                    </Typography>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
@@ -81,6 +92,14 @@ const BMSInfo = ({
                       color="textSecondary"
                     >
                       {equipment.tV}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -205,6 +224,14 @@ const BMSInfo = ({
                       {equipment.vM}
                     </Typography>
                   </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
+                    </Typography>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
@@ -216,6 +243,14 @@ const BMSInfo = ({
                       color="textSecondary"
                     >
                       {equipment.v1}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -231,6 +266,14 @@ const BMSInfo = ({
                       {equipment.v2}
                     </Typography>
                   </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
+                    </Typography>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
@@ -242,6 +285,14 @@ const BMSInfo = ({
                       color="textSecondary"
                     >
                       {equipment.v3}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -257,6 +308,14 @@ const BMSInfo = ({
                       {equipment.v4}
                     </Typography>
                   </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
+                    </Typography>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
@@ -268,6 +327,14 @@ const BMSInfo = ({
                       color="textSecondary"
                     >
                       {equipment.v5}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -283,6 +350,14 @@ const BMSInfo = ({
                       {equipment.v6}
                     </Typography>
                   </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
+                    </Typography>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
@@ -294,6 +369,14 @@ const BMSInfo = ({
                       color="textSecondary"
                     >
                       {equipment.v7}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -309,6 +392,14 @@ const BMSInfo = ({
                       {equipment.v8}
                     </Typography>
                   </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
+                    </Typography>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
@@ -320,6 +411,14 @@ const BMSInfo = ({
                       color="textSecondary"
                     >
                       {equipment.v9}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -335,6 +434,14 @@ const BMSInfo = ({
                       {equipment.v10}
                     </Typography>
                   </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
+                    </Typography>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
@@ -346,6 +453,14 @@ const BMSInfo = ({
                       color="textSecondary"
                     >
                       {equipment.v11}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -361,6 +476,14 @@ const BMSInfo = ({
                       {equipment.v12}
                     </Typography>
                   </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
+                    </Typography>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
@@ -372,6 +495,14 @@ const BMSInfo = ({
                       color="textSecondary"
                     >
                       {equipment.v13}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -387,6 +518,14 @@ const BMSInfo = ({
                       {equipment.v14}
                     </Typography>
                   </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
+                    </Typography>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
@@ -400,6 +539,14 @@ const BMSInfo = ({
                       {equipment.v15}
                     </Typography>
                   </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
+                    </Typography>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
@@ -411,6 +558,14 @@ const BMSInfo = ({
                       color="textSecondary"
                     >
                       {equipment.v16}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -444,6 +599,14 @@ const BMSInfo = ({
                       {equipment.tN}
                     </Typography>
                   </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
+                    </Typography>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
@@ -455,6 +618,14 @@ const BMSInfo = ({
                       color="textSecondary"
                     >
                       {equipment.t1}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -470,6 +641,14 @@ const BMSInfo = ({
                       {equipment.t2}
                     </Typography>
                   </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
+                    </Typography>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
@@ -481,6 +660,14 @@ const BMSInfo = ({
                       color="textSecondary"
                     >
                       {equipment.t3}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -496,6 +683,14 @@ const BMSInfo = ({
                       {equipment.t4}
                     </Typography>
                   </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
+                    </Typography>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
@@ -507,6 +702,14 @@ const BMSInfo = ({
                       color="textSecondary"
                     >
                       {equipment.t5}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -522,6 +725,14 @@ const BMSInfo = ({
                       {equipment.t6}
                     </Typography>
                   </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
+                    </Typography>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
@@ -533,6 +744,14 @@ const BMSInfo = ({
                       color="textSecondary"
                     >
                       {equipment.t7}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -548,6 +767,14 @@ const BMSInfo = ({
                       {equipment.t8}
                     </Typography>
                   </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
+                    </Typography>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
@@ -559,6 +786,14 @@ const BMSInfo = ({
                       color="textSecondary"
                     >
                       {equipment.t9}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -574,6 +809,14 @@ const BMSInfo = ({
                       {equipment.t10}
                     </Typography>
                   </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
+                    </Typography>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
@@ -585,6 +828,14 @@ const BMSInfo = ({
                       color="textSecondary"
                     >
                       {equipment.t11}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -600,6 +851,14 @@ const BMSInfo = ({
                       {equipment.t12}
                     </Typography>
                   </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
+                    </Typography>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
@@ -611,6 +870,14 @@ const BMSInfo = ({
                       color="textSecondary"
                     >
                       {equipment.t13}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -626,6 +893,14 @@ const BMSInfo = ({
                       {equipment.t14}
                     </Typography>
                   </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
+                    </Typography>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
@@ -639,6 +914,14 @@ const BMSInfo = ({
                       {equipment.t15}
                     </Typography>
                   </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
+                    </Typography>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
@@ -650,6 +933,14 @@ const BMSInfo = ({
                       color="textSecondary"
                     >
                       {equipment.t16}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {warningName[0]}
                     </Typography>
                   </TableCell>
                 </TableRow>
