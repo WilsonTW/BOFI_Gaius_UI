@@ -80,6 +80,7 @@ const Capacity = ({ className, ...rest }) => {
   const classes = useStyles();
   const isMountedRef = useIsMountedRef();
   const [pcs, setPcs] = useState('pcs');
+  const [bms, setBms] = useState('bms');
   const data = {
     value: '24,000',
     currency: '$',
@@ -109,25 +110,45 @@ const Capacity = ({ className, ...rest }) => {
       console.error(err);
     }
   }, [isMountedRef]);
+  
+  const getBms = useCallback(async () => {
+    try {
+      // const responsePcs = await axios.get('/api/equipments/pcs');
 
+      // if (isMountedRef.current) {
+      //   setPcs(responsePcs.data.pcs);
+      // }
+      setBms(stateDevice.bms[0]);
+    } catch (err) {
+      console.error(err);
+    }
+  }, [isMountedRef]);
   useEffect(() => {
     getPcs();
-  }, [getPcs]);
+    getBms();
+  }, [getPcs, getBms]);
   
   const radioTemp = [];
-  const alertVar = (parseInt(stateDevice.pcs[0].error0) & 0xAFFF) | parseInt(stateDevice.pcs[0].error1);
-  if ((parseInt(stateDevice.pcs[0].error0) != 0) || (parseInt(stateDevice.pcs[0].error1) != 0)){
+  const error0Val = parseInt(stateDevice.pcs[0].error0);
+  const error0MaskVal = error0Val & 0xAFFF;
+  const error1Val = parseInt(stateDevice.pcs[0].error1);
+  const warnVal = parseInt(stateDevice.bms[0].totWarn);
+  const biState = ["true", "false"];
+
+  const alertVar = error0MaskVal | error1Val | warnVal;
+  if (((error0MaskVal != 0) || (error1Val != 0)) && (warnVal == 0)){
     radioTemp.push(
       <RadioGroup 
         aria-label="operation" 
         name="operation" 
         value={value} 
-        onChange={handleChange}>
+        onChange={handleChange}
+        >
         <FormControlLabel  
           variant="body2" 
           // value="auto"
-          checked="true"
-          control={<Radio />} 
+          // checked="true"
+          control={<Radio checked={biState[0]}/>} 
           label="PCS異常" />
         <FormControlLabel  
           variant="body2" 
@@ -137,13 +158,61 @@ const Capacity = ({ className, ...rest }) => {
       </RadioGroup>
     )
   }
-  else{
+  else if (((error0MaskVal == 0) && (error1Val == 0)) && (warnVal != 0)){
     radioTemp.push(
       <RadioGroup 
         aria-label="operation" 
         name="operation" 
         value={value} 
-        onChange={handleChange}>
+        onChange={handleChange}
+        >
+        <FormControlLabel  
+          variant="body2" 
+          // value="auto"
+          // checked="true"
+          control={<Radio />} 
+          label="PCS異常" />
+        <FormControlLabel  
+          variant="body2" 
+          // value="auto" 
+          // checked="true"
+          control={<Radio checked={biState[0]}/>} 
+          label="BMS異常" />
+      </RadioGroup>
+    )
+  }
+  else if (((error0MaskVal != 0) || (error1Val != 0)) && (warnVal != 0)){
+    radioTemp.push(
+      <RadioGroup 
+        aria-label="operation" 
+        name="operation" 
+        value={value} 
+        onChange={handleChange}
+        >
+        <FormControlLabel  
+          variant="body2" 
+          // value="auto"
+          // checked="true"
+          control={<Radio checked={biState[0]}/>} 
+          label="PCS異常" />
+        <FormControlLabel  
+          variant="body2" 
+          // value="auto" 
+          // checked="true"
+          control={<Radio checked={biState[0]}/>} 
+          label="BMS異常" />
+      </RadioGroup>
+      // <Alert severity="error">This is an error alert — check it out!</Alert>
+    )
+  }
+  else{
+    radioTemp.push(
+      <RadioGroup
+        aria-label="operation" 
+        name="operation" 
+        value={value} 
+        onChange={handleChange}
+        >
         <FormControlLabel  
           variant="body2" 
           // value="auto"

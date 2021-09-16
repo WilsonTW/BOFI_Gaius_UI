@@ -144,7 +144,10 @@ const pcsProfile = [
 const bmsProfile = [
   "vM","v1","v2","v3","v4","v5","v6","v7","v8","v9","v10","v11","v12","v13","v14","v15",
   "v16","tN","t1","t2","t3","t4","t5","t6","t7","t8","t9","t10","t11","t12","t13","t14",
-  "t15","t16","tA","tV","sAh","tAh","cycle","soc","soh","equal","humidity"
+  "t15","t16","tA","tV","sAh","tAh","cycle","soc","soh","equal","humidity",
+  "vMWarn","v1Warn","v2Warn","v3Warn","v4Warn","v5Warn","v6Warn","v7Warn","v8Warn","v9Warn","v10Warn","v11Warn","v12Warn","v13Warn","v14Warn","v15Warn",
+  "v16Warn","tNWarn","t1Warn","t2Warn","t3Warn","t4Warn","t5Warn","t6Warn","t7Warn","t8Warn","t9Warn","t10Warn","t11Warn","t12Warn","t13Warn","t14Warn",
+  "t15Warn","t16Warn","tAWarn","tVWarn","totWarn"
 ]; 
 // const plcProfile = [
 //   "p1","p2","p3","p4","p5","p6","p7","p8","p9","p10","p11","p12","p13","p14","p15","p16"
@@ -229,40 +232,8 @@ const initialDeviceState = {
   bms: [
     {
       id: 1,
-      vM: '0',
-      v1: '0',
-      v2: '0',
-      v3: '0',
-      v4: '0',
-      v5: '0',
-      v6: '0',
-      v7: '0',
-      v8: '0',
-      v9: '0',
-      v10: '0',
-      v11: '0',
-      v12: '0',
-      v13: '0',
-      v14: '0',
-      v15: '0',
-      v16: '0',
-      tN: '0',
-      t1: '0',
-      t2: '0',
-      t3: '0',
-      t4: '0',
-      t5: '0',
-      t6: '0',
-      t7: '0',
-      t8: '0',
-      t9: '0',
-      t10: '0',
-      t11: '0',
-      t12: '0',
-      t13: '0',
-      t14: '0',
-      t15: '0',
-      t16: '0',
+      vM: '0', v1: '0', v2: '0', v3: '0', v4: '0', v5: '0', v6: '0', v7: '0', v8: '0', v9: '0', v10: '0', v11: '0', v12: '0', v13: '0', v14: '0', v15: '0', v16: '0',
+      tN: '0', t1: '0', t2: '0', t3: '0', t4: '0', t5: '0', t6: '0', t7: '0', t8: '0', t9: '0', t10: '0', t11: '0', t12: '0', t13: '0', t14: '0', t15: '0', t16: '0',
       tA: '0',
       tV: '0',
       sAh: '0',
@@ -271,7 +242,12 @@ const initialDeviceState = {
       soc: '0',
       soh: '0',
       equal: '0',
-      humidity: '0'
+      humidity: '0',
+      vMWarn: '0', v1Warn: '0', v2Warn: '0', v3Warn: '0', v4Warn: '0', v5Warn: '0', v6Warn: '0', v7Warn: '0', v8Warn: '0', v9Warn: '0', v10Warn: '0', v11Warn: '0', v12Warn: '0', v13Warn: '0', v14Warn: '0', v15Warn: '0', v16Warn: '0',
+      tNWarn: '0', t1Warn: '0', t2Warn: '0', t3Warn: '0', t4Warn: '0', t5Warn: '0', t6Warn: '0', t7Warn: '0', t8Warn: '0', t9Warn: '0', t10Warn: '0', t11Warn: '0', t12Warn: '0', t13Warn: '0', t14Warn: '0', t15Warn: '0', t16Warn: '0',
+      tAWarn: '0',
+      tVWarn: '0',
+      totWarn: '0'
     }
     // {
     //   id: '02',
@@ -853,6 +829,191 @@ const reducerDevice = (state, action) => {
           };
         case "humidity":
           state.bms[action.id - 1].humidity = action.payload;  
+          return {
+            ...state
+          };
+        case "vMWarn":
+          state.bms[action.id - 1].vMWarn = action.payload;  
+          return {
+            ...state
+          };
+        case "v1Warn":
+          state.bms[action.id - 1].v1Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "v2Warn":
+          state.bms[action.id - 1].v2Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "v3Warn":
+          state.bms[action.id - 1].v3Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "v4Warn":
+          state.bms[action.id - 1].v4Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "v5Warn":
+          state.bms[action.id - 1].v5Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "v6Warn":
+          state.bms[action.id - 1].v6Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "v7Warn":
+          state.bms[action.id - 1].v7Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "v8Warn":
+          state.bms[action.id - 1].v8Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "v9Warn":
+          state.bms[action.id - 1].v9Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "v10Warn":
+          state.bms[action.id - 1].v10Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "v11Warn":
+          state.bms[action.id - 1].v11Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "v12Warn":
+          state.bms[action.id - 1].v12Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "v13Warn":
+          state.bms[action.id - 1].v13Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "v14Warn":
+          state.bms[action.id - 1].v14Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "v15Warn":
+          state.bms[action.id - 1].v15Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "v16Warn":
+          state.bms[action.id - 1].v16Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "tNWarn":
+          state.bms[action.id - 1].tNWarn = action.payload;  
+          return {
+            ...state
+          };
+        case "t1Warn":
+          state.bms[action.id - 1].t1Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "t2Warn":
+          state.bms[action.id - 1].t2Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "t3Warn":
+          state.bms[action.id - 1].t3Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "t4Warn":
+          state.bms[action.id - 1].t4Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "t5Warn":
+          state.bms[action.id - 1].t5Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "t6Warn":
+          state.bms[action.id - 1].t6Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "t7Warn":
+          state.bms[action.id - 1].t7Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "t8Warn":
+          state.bms[action.id - 1].t8Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "t9Warn":
+          state.bms[action.id - 1].t9Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "t10Warn":
+          state.bms[action.id - 1].t10Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "t11Warn":
+          state.bms[action.id - 1].t11Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "t12v":
+          state.bms[action.id - 1].t12Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "t13Warn":
+          state.bms[action.id - 1].t13Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "t14Warn":
+          state.bms[action.id - 1].t14Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "t15Warn":
+          state.bms[action.id - 1].t15Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "t16Warn":
+          state.bms[action.id - 1].t16Warn = action.payload;  
+          return {
+            ...state
+          };
+        case "tAWarn":
+          state.bms[action.id - 1].tAWarn = action.payload;  
+          return {
+            ...state
+          };
+        case "tVWarn":
+          state.bms[action.id - 1].tVWarn = action.payload;  
+          return {
+            ...state
+          };
+        case "totWarn":
+          state.bms[action.id - 1].totWarn = action.payload;  
           return {
             ...state
           };
