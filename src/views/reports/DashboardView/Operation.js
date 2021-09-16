@@ -89,7 +89,7 @@ const Operation = ({ className, ...rest }) => {
   const handleChange = (event) => {
     setValue(event.target.value);
   };
-  const [state, dispatch, stateDevice, dispatchDevice] = useContext(MqttContext);
+  const [state, dispatch, stateDevice, dispatchDevice, mqttPublish] = useContext(MqttContext);
   const classes = useStyles();
   const isMountedRef = useIsMountedRef();
   const [pcs, setPcs] = useState('pcs');
@@ -110,6 +110,11 @@ const Operation = ({ className, ...rest }) => {
     value: '580',
     label: '市電側功率(KW)'
   };
+  // const testPub = {
+  //   topic: "/test/test",
+  //   qos: 1,
+  //   payload: "abc"
+  // }
   const getPcs = useCallback(async () => {
     try {
       // const responsePcs = await axios.get('/api/equipments/pcs');
@@ -149,6 +154,7 @@ const Operation = ({ className, ...rest }) => {
           label="綠灰電模式" />
       </RadioGroup>
     );
+    // mqttPublish(testPub);
   }
   else{
     radioTemp.push(

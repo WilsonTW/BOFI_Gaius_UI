@@ -1589,7 +1589,7 @@ export const MqttProvider = ({ children }) => {
         {/* <Publisher publish={mqttPublish} /> */}
       {/* </MqttContext.Provider> */}
       {/* <Receiver payload={payload}/> */}
-      <MqttContext.Provider value={[state, dispatch, stateDevice, dispatchDevice]}>
+      <MqttContext.Provider value={[state, dispatch, stateDevice, dispatchDevice, mqttPublish]}>
         {children}
       </MqttContext.Provider>
     </>
