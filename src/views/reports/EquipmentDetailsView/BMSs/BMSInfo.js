@@ -37,6 +37,7 @@ const BMSInfo = ({
                      '低於下限',
                      '高於上限',
                      '其他錯誤'];
+  const errorColor = ["textSecondary","error"];
   return (
     <Card
       className={clsx(classes.root, className)}
@@ -76,9 +77,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.tAWarn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.tAWarn) > 2) ? 3 : parseInt(equipment.tAWarn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -97,9 +98,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.tVWarn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.tVWarn) > 2) ? 3 : parseInt(equipment.tVWarn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -227,9 +228,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.vMWarn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.vMWarn) > 2) ? 3 : parseInt(equipment.vMWarn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -248,9 +249,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.v1Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.v1Warn) > 2) ? 3 : parseInt(equipment.v1Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -269,9 +270,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.v2Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.v2Warn) > 2) ? 3 : parseInt(equipment.v2Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -290,9 +291,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.v3Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.v3Warn) > 2) ? 3 : parseInt(equipment.v3Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -311,9 +312,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.v4Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.v4Warn) > 2) ? 3 : parseInt(equipment.v4Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -332,9 +333,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.v5Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.v5Warn) > 2) ? 3 : parseInt(equipment.v5Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -353,9 +354,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.v6Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.v6Warn) > 2) ? 3 : parseInt(equipment.v6Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -374,9 +375,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.v7Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.v7Warn) > 2) ? 3 : parseInt(equipment.v7Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -395,9 +396,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.v8Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.v8Warn) > 2) ? 3 : parseInt(equipment.v8Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -416,9 +417,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.v9Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.v9Warn) > 2) ? 3 : parseInt(equipment.v9Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -437,9 +438,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.v10Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.v10Warn) > 2) ? 3 : parseInt(equipment.v10Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -458,9 +459,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.v11Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.v11Warn) > 2) ? 3 : parseInt(equipment.v11Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -479,9 +480,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.v12Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.v12Warn) > 2) ? 3 : parseInt(equipment.v12Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -500,9 +501,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.v13Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.v13Warn) > 2) ? 3 : parseInt(equipment.v13Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -521,9 +522,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.v14Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.v14Warn) > 2) ? 3 : parseInt(equipment.v14Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -542,9 +543,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.v15Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.v15Warn) > 2) ? 3 : parseInt(equipment.v15Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -563,9 +564,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.v16Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.v16Warn) > 2) ? 3 : parseInt(equipment.v16Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -602,9 +603,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.tNWarn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.tNWarn) > 2) ? 3 : parseInt(equipment.tNWarn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -623,9 +624,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.t1Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.t1Warn) > 2) ? 3 : parseInt(equipment.t1Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -644,9 +645,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.t2Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.t2Warn) > 2) ? 3 : parseInt(equipment.t2Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -665,9 +666,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.t3Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.t3Warn) > 2) ? 3 : parseInt(equipment.t3Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -686,9 +687,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.t4Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.t4Warn) > 2) ? 3 : parseInt(equipment.t4Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -707,9 +708,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.t5Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.t5Warn) > 2) ? 3 : parseInt(equipment.t5Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -728,9 +729,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.t6Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.t6Warn) > 2) ? 3 : parseInt(equipment.t6Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -749,9 +750,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.t7Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.t7Warn) > 2) ? 3 : parseInt(equipment.t7Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -770,9 +771,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.t8Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.t8Warn) > 2) ? 3 : parseInt(equipment.t8Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -791,9 +792,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.t9Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.t9Warn) > 2) ? 3 : parseInt(equipment.t9Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -812,9 +813,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.t10Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.t10Warn) > 2) ? 3 : parseInt(equipment.t10Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -833,9 +834,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.t11Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.t11Warn) > 2) ? 3 : parseInt(equipment.t11Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -854,9 +855,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.t12Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.t12Warn) > 2) ? 3 : parseInt(equipment.t12Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -875,9 +876,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.t13Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.t13Warn) > 2) ? 3 : parseInt(equipment.t13Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -896,9 +897,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.t14Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.t14Warn) > 2) ? 3 : parseInt(equipment.t14Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -917,9 +918,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.t15Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.t15Warn) > 2) ? 3 : parseInt(equipment.t15Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -938,9 +939,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
+                      color={errorColor[((parseInt(equipment.t16Warn) > 0) ? 1 : 0)]}
                     >
-                      {warningName[0]}
+                      {warningName[((parseInt(equipment.t16Warn) > 2) ? 3 : parseInt(equipment.t16Warn))]}
                     </Typography>
                   </TableCell>
                 </TableRow>

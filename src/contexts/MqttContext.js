@@ -977,7 +977,7 @@ const reducerDevice = (state, action) => {
           return {
             ...state
           };
-        case "t12v":
+        case "t12Warn":
           state.bms[action.id - 1].t12Warn = action.payload;  
           return {
             ...state
