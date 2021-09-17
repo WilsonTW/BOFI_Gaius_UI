@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer, useState } from "react";
 import Connection from './MqttConnection';
-// import Publisher from './MqttPublisher';
+import Publisher from './MqttPublisher';
 // import Subscriber from './MqttSubscriber';
 // import Receiver from './MqttReceiver';
 import mqtt from 'mqtt';
