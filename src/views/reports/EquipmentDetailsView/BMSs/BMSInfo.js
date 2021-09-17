@@ -228,9 +228,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color={errorColor[((parseInt(equipment.vMWarn) > 0) ? 1 : 0)]}
+                      color={errorColor[0]}
                     >
-                      {warningName[((parseInt(equipment.vMWarn) > 2) ? 3 : parseInt(equipment.vMWarn))]}
+                      {warningName[0]}
                     </Typography>
                   </TableCell>
                 </TableRow>
@@ -603,9 +603,9 @@ const BMSInfo = ({
                   <TableCell>
                     <Typography
                       variant="body2"
-                      color={errorColor[((parseInt(equipment.tNWarn) > 0) ? 1 : 0)]}
+                      color={errorColor[0]}
                     >
-                      {warningName[((parseInt(equipment.tNWarn) > 2) ? 3 : parseInt(equipment.tNWarn))]}
+                      {warningName[0]}
                     </Typography>
                   </TableCell>
                 </TableRow>
