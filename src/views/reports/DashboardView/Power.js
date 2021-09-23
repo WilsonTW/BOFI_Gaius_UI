@@ -58,7 +58,7 @@ const Power = ({ className, ...rest }) => {
     // value: state.connectStatus,
     // value: state.isSubed,
     // value: state.mqttPayload,
-    label: '總發電量(KWh)'
+    label: '輸入電壓(Ｖ)'
   };
 
   const getPcs = useCallback(async () => {
@@ -137,7 +137,7 @@ const Power = ({ className, ...rest }) => {
           <TextField 
             id="outlined-basic" 
             // label={dischargePower.value} 
-            label={stateDevice.pcs[0].totGenE}
+            label={stateDevice.pcs[0].sInV1}
             variant="outlined"
             size="normal"
           />
