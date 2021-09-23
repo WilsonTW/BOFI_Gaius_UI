@@ -225,6 +225,7 @@ const EarningsSegmentation = ({ className, ...rest }) => {
   const greenInPercent = parseInt(stateDevice.pcs[0].sInP1)/(parseInt(stateDevice.pcs[0].acInAcP)+parseInt(stateDevice.pcs[0].sInP1));
   const greenOutPower = (parseInt(stateDevice.pcs[0].acOutAcP) * greenInPercent).toFixed(1);
   const greyOutPower = (parseInt(stateDevice.pcs[0].acOutAcP) - greenOutPower).toFixed(1);
+  const countOutput = parseInt(stateDevice.pcs[0].countOut);
   return (
     <Card
       className={clsx(classes.root, className)}
@@ -237,7 +238,7 @@ const EarningsSegmentation = ({ className, ...rest }) => {
       /> */}
       <Box 
         display="flex"
-        mt={1}
+        mt={2}
         position="relative"
         minHeight={10}
       >
@@ -246,7 +247,7 @@ const EarningsSegmentation = ({ className, ...rest }) => {
             color="textPrimary"
             mt={3}
         >
-          單次電力供給狀態
+          每日單次電力供給狀態
         </Typography>
       </Box>
       <Box 
@@ -261,6 +262,16 @@ const EarningsSegmentation = ({ className, ...rest }) => {
             lg={6}
             xs={12}
           >
+            <TextField
+              label="當日累積次數"
+              // value={stateDevice.pcs[0].sInP1}
+              value={countOutput}
+              // onChange={handleChange}
+              fullWidth
+              variant="outlined"
+              margin="normal"
+              InputLabelProps={{style: {fontSize: 20}}} // font size of input label
+            />
             <TextField
               label="單次綠電輸出度電(KWh)"
               // value={stateDevice.pcs[0].sInP1}
@@ -285,16 +296,16 @@ const EarningsSegmentation = ({ className, ...rest }) => {
       </Box>
       <Box 
         display="flex"
-        mt={5}
+        mt={2}
         position="relative"
-        minHeight={6}
+        minHeight={2}
       >
       {/* <Divider /> */}
       </Box>
       <Divider />
       <Box 
         display="flex"
-        mt={5}
+        mt={2}
         position="relative"
         minHeight={10}
       >
@@ -303,7 +314,7 @@ const EarningsSegmentation = ({ className, ...rest }) => {
             color="textPrimary"
             mt={3}
         >
-          累計電力供給狀態
+          每日累計電力供給狀態
         </Typography>
      </Box>
       <Box 

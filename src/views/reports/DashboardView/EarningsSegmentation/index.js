@@ -399,7 +399,7 @@ const EarningsSegmentation = ({ className, ...rest }) => {
         options={data.options}
         series={data.series}
         type="radialBar"
-        height="300"
+        height="334"
       />
       {/* <Divider />
       <Box display="flex">
