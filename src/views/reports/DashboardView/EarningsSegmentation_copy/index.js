@@ -222,10 +222,14 @@ const EarningsSegmentation = ({ className, ...rest }) => {
     )
   }
 
-  const greenInPercent = parseInt(stateDevice.pcs[0].sInP1)/(parseInt(stateDevice.pcs[0].acInAcP)+parseInt(stateDevice.pcs[0].sInP1));
-  const greenOutPower = (parseInt(stateDevice.pcs[0].acOutAcP) * greenInPercent).toFixed(1);
-  const greyOutPower = (parseInt(stateDevice.pcs[0].acOutAcP) - greenOutPower).toFixed(1);
-  const countOutput = parseInt(stateDevice.pcs[0].countOut);
+  // const greenInPercent = parseInt(stateDevice.pcs[0].sInP1)/(parseInt(stateDevice.pcs[0].acInAcP)+parseInt(stateDevice.pcs[0].sInP1));
+  // const greenOutPower = (parseInt(stateDevice.pcs[0].acOutAcP) * greenInPercent).toFixed(1);
+  // const greyOutPower = (parseInt(stateDevice.pcs[0].acOutAcP) - greenOutPower).toFixed(1);
+  const lastGreenEnergy = parseInt(stateDevice.pcs[0].lastGreenE);
+  const lastGreyEnergy = parseInt(stateDevice.pcs[0].lastGreyE);
+  const sumGreenEnergy = parseInt(stateDevice.pcs[0].sumGreenE);
+  const sumGreyEnergy = parseInt(stateDevice.pcs[0].sumGreyE);
+  const countOutput = parseInt(stateDevice.pcs[0].dayCount);
   return (
     <Card
       className={clsx(classes.root, className)}
@@ -275,7 +279,7 @@ const EarningsSegmentation = ({ className, ...rest }) => {
             <TextField
               label="單次綠電輸出度電(KWh)"
               // value={stateDevice.pcs[0].sInP1}
-              value={greenOutPower}
+              value={lastGreenEnergy}
               // onChange={handleChange}
               fullWidth
               variant="outlined"
@@ -285,7 +289,7 @@ const EarningsSegmentation = ({ className, ...rest }) => {
              <TextField
               label="單次綠灰電輸出度電(KWh)"
               // value={stateDevice.pcs[0].acInAcP}
-              value={greyOutPower}
+              value={lastGreyEnergy}
               // onChange={handleChange}
               fullWidth
               variant="outlined"
@@ -332,7 +336,7 @@ const EarningsSegmentation = ({ className, ...rest }) => {
            <TextField
               label="累計綠電輸出度電(KWh)"
               // value={stateDevice.pcs[0].sInP1}
-              value={greenOutPower}
+              value={sumGreenEnergy}
               // onChange={handleChange}
               fullWidth
               variant="outlined"
@@ -342,7 +346,7 @@ const EarningsSegmentation = ({ className, ...rest }) => {
              <TextField
               label="累計綠灰電輸出度電(KWh)"
               // value={stateDevice.pcs[0].acInAcP}
-              value={greyOutPower}
+              value={sumGreyEnergy}
               // onChange={handleChange}
               fullWidth
               variant="outlined"

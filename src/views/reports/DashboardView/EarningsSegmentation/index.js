@@ -194,7 +194,8 @@ const EarningsSegmentation = ({ className, ...rest }) => {
         mode: theme.palette.type
       }
     },
-    series: [(100 * parseInt(stateDevice.pcs[0].sInP1)/(parseInt(stateDevice.pcs[0].acInAcP)+parseInt(stateDevice.pcs[0].sInP1))).toFixed(1)]
+    // series: [(100 * parseInt(stateDevice.pcs[0].sInP1)/(parseInt(stateDevice.pcs[0].acInAcP)+parseInt(stateDevice.pcs[0].sInP1))).toFixed(1)]
+    series: [(100 * parseInt(stateDevice.pcs[0].greenPer)).toFixed(1)]
   };
 
   const DischargeButton = withStyles((theme) => ({

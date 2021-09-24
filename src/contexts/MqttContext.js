@@ -139,7 +139,7 @@ const device = {
 const pcsProfile = [
   "error0","error1","wMode","bV","bT","acInAcP","acOutV","acOutAcP","acOutF","acOutC","bCap","sInP1","bC","sInV1","maxT","acInToAcP",
   "acInC","sInC1","acOutAppP","acInV","acInF","acOutPP","innT","status0","status1","acOutToP","bP","totGenE","genEnH","genEnD","genEnM","genEnY","saveT",
-  "dateHourE","dateDayE","dateMonE","dateYearE","con1","con2","con3","con4","sysTime","countOut"
+  "dateHourE","dateDayE","dateMonE","dateYearE","con1","con2","con3","con4","sysTime","greenPer","dayCount","lastGreenE","lastGreyE","sumGreenE","sumGreyE"
 ]; 
 const bmsProfile = [
   "vM","v1","v2","v3","v4","v5","v6","v7","v8","v9","v10","v11","v12","v13","v14","v15",
@@ -209,7 +209,13 @@ const initialDeviceState = {
       con2: '0',
       con3: '0',
       con4: '0',
-      sysTime: '0'
+      sysTime: '0',
+      greenPer: '0',
+      dayCount: '0',
+      lastGreenE: '0',
+      lastGreyE: '0',
+      sumGreenE: '0',
+      sumGreyE: '0'
     }
     // {
     //   id: '02',
@@ -612,8 +618,33 @@ const reducerDevice = (state, action) => {
           return {
             ...state
           };
-        case "countOut":
-          state.pcs[action.id - 1].countOut = action.payload;  
+        case "greenPer":
+          state.pcs[action.id - 1].greenPer = action.payload;  
+          return {
+            ...state
+          };
+        case "dayCount":
+          state.pcs[action.id - 1].dayCount = action.payload;  
+          return {
+            ...state
+          };
+        case "lastGreenE":
+          state.pcs[action.id - 1].lastGreenE = action.payload;  
+          return {
+            ...state
+          };
+        case "lastGreyE":
+          state.pcs[action.id - 1].lastGreyE = action.payload;  
+          return {
+            ...state
+          };
+        case "sumGreenE":
+          state.pcs[action.id - 1].sumGreenE = action.payload;  
+          return {
+            ...state
+          };
+        case "sumGreyE":
+          state.pcs[action.id - 1].sumGreyE = action.payload;  
           return {
             ...state
           };
