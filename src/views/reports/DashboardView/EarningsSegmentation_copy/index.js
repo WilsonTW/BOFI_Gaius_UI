@@ -225,10 +225,10 @@ const EarningsSegmentation = ({ className, ...rest }) => {
   // const greenInPercent = parseInt(stateDevice.pcs[0].sInP1)/(parseInt(stateDevice.pcs[0].acInAcP)+parseInt(stateDevice.pcs[0].sInP1));
   // const greenOutPower = (parseInt(stateDevice.pcs[0].acOutAcP) * greenInPercent).toFixed(1);
   // const greyOutPower = (parseInt(stateDevice.pcs[0].acOutAcP) - greenOutPower).toFixed(1);
-  const lastGreenEnergy = parseInt(stateDevice.pcs[0].lastGreenE);
-  const lastGreyEnergy = parseInt(stateDevice.pcs[0].lastGreyE);
-  const sumGreenEnergy = parseInt(stateDevice.pcs[0].sumGreenE);
-  const sumGreyEnergy = parseInt(stateDevice.pcs[0].sumGreyE);
+  const lastGreenEnergy = parseFloat(stateDevice.pcs[0].lastGreenE);
+  const lastGreyEnergy = parseFloat(stateDevice.pcs[0].lastGreyE);
+  const sumGreenEnergy = parseFloat(stateDevice.pcs[0].sumGreenE);
+  const sumGreyEnergy = parseFloat(stateDevice.pcs[0].sumGreyE);
   const countOutput = parseInt(stateDevice.pcs[0].dayCount);
   return (
     <Card
