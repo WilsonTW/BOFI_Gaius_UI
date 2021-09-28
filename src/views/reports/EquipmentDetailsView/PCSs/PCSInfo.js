@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import {
   Box,
   Button,
+  Checkbox,
   Grid,
   Card,
   CardHeader,
@@ -175,6 +176,10 @@ for (var i=0; i<8; i++) {
     </TableRow>
   );
 }
+const [checked, setChecked] = React.useState(true);
+const handleChange = (event) => {
+  setChecked(event.target.checked);
+};
 
   return (
     <Card
@@ -599,7 +604,7 @@ for (var i=0; i<8; i++) {
                     </Typography>
                   </TableCell>
                 </TableRow>
-                <TableRow>
+                {/* <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
                     每小時發電量(Wh)
                   </TableCell>
@@ -650,7 +655,7 @@ for (var i=0; i<8; i++) {
                       {equipment.genEnY}
                     </Typography>
                   </TableCell>
-                </TableRow>
+                </TableRow> */}
               </TableBody>
             </Table>
           </Grid>
@@ -706,6 +711,13 @@ for (var i=0; i<8; i++) {
                       {equipment.con3}
                     </Typography>
                   </TableCell>
+                  <TableCell>
+                  <Checkbox
+                    checked={checked}
+                    onChange={handleChange}
+                    inputProps={{ 'aria-label': 'controlled' }}
+                  />
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
@@ -719,6 +731,13 @@ for (var i=0; i<8; i++) {
                     >
                       {equipment.con4}
                     </Typography>
+                  </TableCell>
+                  <TableCell>
+                  <Checkbox
+                    checked={checked}
+                    onChange={handleChange}
+                    inputProps={{ 'aria-label': 'controlled' }}
+                  />
                   </TableCell>
                 </TableRow>
               </TableBody>
