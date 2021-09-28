@@ -176,9 +176,13 @@ for (var i=0; i<8; i++) {
     </TableRow>
   );
 }
-const [checked, setChecked] = React.useState(true);
-const handleChange = (event) => {
-  setChecked(event.target.checked);
+const [checked1, setChecked1] = React.useState(true);
+const [checked2, setChecked2] = React.useState(true);
+const handleChange1 = (event) => {
+  setChecked1(event.target.checked);
+};
+const handleChange2 = (event) => {
+  setChecked2(event.target.checked);
 };
 
   return (
@@ -713,8 +717,8 @@ const handleChange = (event) => {
                   </TableCell>
                   <TableCell>
                   <Checkbox
-                    checked={checked}
-                    onChange={handleChange}
+                    checked={checked1}
+                    onChange={handleChange1}
                     inputProps={{ 'aria-label': 'controlled' }}
                   />
                   </TableCell>
@@ -734,8 +738,8 @@ const handleChange = (event) => {
                   </TableCell>
                   <TableCell>
                   <Checkbox
-                    checked={checked}
-                    onChange={handleChange}
+                    checked={checked2}
+                    onChange={handleChange2}
                     inputProps={{ 'aria-label': 'controlled' }}
                   />
                   </TableCell>
