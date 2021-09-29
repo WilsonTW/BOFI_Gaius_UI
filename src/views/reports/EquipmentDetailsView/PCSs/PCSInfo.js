@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import {
   Box,
   Button,
+  IconButton,
   Checkbox,
   Grid,
   Card,
@@ -16,6 +17,7 @@ import {
   Typography,
   makeStyles
 } from '@material-ui/core';
+import BlockIcon from '@material-ui/icons/Block';
 import LockOpenIcon from '@material-ui/icons/LockOpenOutlined';
 import PersonIcon from '@material-ui/icons/PersonOutline';
 import Label from 'src/components/Label';
@@ -398,7 +400,7 @@ const handleChange2 = (event) => {
                     </Typography>
                   </TableCell>
                 </TableRow>
-                <TableRow>
+                {/* <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
                     AC輸入電流(A)
                   </TableCell>
@@ -410,7 +412,7 @@ const handleChange2 = (event) => {
                       {equipment.acInC}
                     </Typography>
                   </TableCell>
-                </TableRow>
+                </TableRow> */}
                 <TableRow>
                   <TableCell className={classes.fontWeightMedium}>
                     太陽能輸入電流(A)
@@ -716,11 +718,20 @@ const handleChange2 = (event) => {
                     </Typography>
                   </TableCell>
                   <TableCell>
-                  <Checkbox
+                  {/* <Checkbox
                     checked={checked1}
                     onChange={handleChange1}
                     inputProps={{ 'aria-label': 'controlled' }}
-                  />
+                  /> */}
+                  <IconButton 
+                    color="primary" 
+                    aria-label="upload picture" 
+                    component="span" 
+                    checked={checked1}
+                    onChange={handleChange1}
+                  >
+                    <BlockIcon />
+                  </IconButton>
                   </TableCell>
                 </TableRow>
                 <TableRow>
