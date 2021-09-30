@@ -183,14 +183,14 @@ for (var i=0; i<8; i++) {
 }
 const [checked1, setChecked1] = React.useState(true);
 const [checked2, setChecked2] = React.useState(true);
-const testPub = {
+const con3Pub = {
   topic: "/BOFI/gaius/sp4k/1/con3/w",
   qos: 1,
   payload: "0"
 }
 const handleChange1 = (event) => {
   setChecked1(event.target.checked);
-  publish(testPub);
+  publish(con3Pub);
 };
 const handleChange2 = (event) => {
   setChecked2(event.target.checked);
