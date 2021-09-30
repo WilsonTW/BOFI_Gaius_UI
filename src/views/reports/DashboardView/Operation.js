@@ -88,6 +88,7 @@ const Operation = ({ className, ...rest }) => {
 
   const handleChange = (event) => {
     setValue(event.target.value);
+    // mqttPublish(testPub);
   };
   const [state, dispatch, stateDevice, dispatchDevice, mqttPublish] = useContext(MqttContext);
   const classes = useStyles();

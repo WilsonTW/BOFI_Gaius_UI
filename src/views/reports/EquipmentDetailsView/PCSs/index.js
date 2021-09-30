@@ -13,6 +13,7 @@ const PCSs = ({
   equipment,
   className,
   station,
+  publish,
   ...rest
 }) => {
   const classes = useStyles();
@@ -33,7 +34,7 @@ const PCSs = ({
           // xs={12}
           item xs={12} spacing={3}
         >
-          <PCSInfo equipment={pcs} station={i+1}/>
+          <PCSInfo equipment={pcs} station={i+1} publish={publish}/>
         </Grid>
       ))}
     </Grid>

@@ -46,7 +46,7 @@ const EquipmentDetailsView = () => {
   // const [powermeter, setPowermeter] = useState('powermeter');
   const [currentTab, setCurrentTab] = useState('pcs');
   
-  const [state, dispatch, stateDevice, dispatchDevice] = useContext(MqttContext);
+  const [state, dispatch, stateDevice, dispatchDevice, mqttPublish] = useContext(MqttContext);
 
   const tabs = [
     { value: 'pcs', label: 'PCS' },
@@ -205,7 +205,7 @@ const EquipmentDetailsView = () => {
         </Box>
         <Divider />
         <Box mt={3}>
-          {currentTab === 'pcs' && <PCSs equipment={[pcs]} />}
+          {currentTab === 'pcs' && <PCSs equipment={[pcs]} publish={mqttPublish}/>}
           {currentTab === 'bms' && <BMSs equipment={[bms]} />}
           {/* {currentTab === 'plc' && <PLCs equipment={[plc]} />} */}
           {/* {currentTab === 'mppt' && <MPPTs equipment={[mppt]} />} */}

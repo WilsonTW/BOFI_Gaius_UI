@@ -1,4 +1,5 @@
 import React from 'react';
+// import { MqttContext } from 'src/contexts/MqttContext';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import {
@@ -33,8 +34,10 @@ const PCSInfo = ({
   equipment,
   className,
   station,
+  publish,
   ...rest
 }) => {
+  // const [state, dispatch, stateDevice, dispatchDevice, mqttPublish] = useContext(MqttContext);
   const classes = useStyles();
   const error0Name =['AC輸入頻率損失',
                      'AC輸入欠電壓',
@@ -180,8 +183,14 @@ for (var i=0; i<8; i++) {
 }
 const [checked1, setChecked1] = React.useState(true);
 const [checked2, setChecked2] = React.useState(true);
+const testPub = {
+  topic: "/BOFI/gaius/sp4k/1/con3/w",
+  qos: 1,
+  payload: "0"
+}
 const handleChange1 = (event) => {
   setChecked1(event.target.checked);
+  publish(testPub);
 };
 const handleChange2 = (event) => {
   setChecked2(event.target.checked);
@@ -728,7 +737,7 @@ const handleChange2 = (event) => {
                     aria-label="upload picture" 
                     component="span" 
                     checked={checked1}
-                    onChange={handleChange1}
+                    onClick={handleChange1}
                   >
                     <BlockIcon />
                   </IconButton>
