@@ -772,7 +772,7 @@ const handleChange2 = (event) => {
                   </TableCell>
                   <TableCell>
                   <Checkbox
-                    checked={checked2}
+                    checked={parseInt(equipment.con4)}
                     onChange={handleChange2}
                     inputProps={{ 'aria-label': 'controlled' }}
                   />
