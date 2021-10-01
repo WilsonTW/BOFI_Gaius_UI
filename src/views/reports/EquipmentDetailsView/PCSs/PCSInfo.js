@@ -188,12 +188,26 @@ const con3Pub = {
   qos: 1,
   payload: "0"
 }
+const con4OnPub = {
+  topic: "/BOFI/gaius/sp4k/1/con4/w",
+  qos: 1,
+  payload: "1"
+}
+const con4OffPub = {
+  topic: "/BOFI/gaius/sp4k/1/con4/w",
+  qos: 1,
+  payload: "0"
+}
 const handleChange1 = (event) => {
   setChecked1(event.target.checked);
   publish(con3Pub);
 };
 const handleChange2 = (event) => {
   setChecked2(event.target.checked);
+  if(event.target.checked == true)
+    publish(con4OnPub);
+  else
+    publish(con4OffPub);
 };
 
   return (
