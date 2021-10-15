@@ -215,7 +215,8 @@ const initialDeviceState = {
       lastGreenE: '0',
       lastGreyE: '0',
       sumGreenE: '0',
-      sumGreyE: '0'
+      sumGreyE: '0',
+      acInMax: '0'
     }
     // {
     //   id: '02',
@@ -645,6 +646,11 @@ const reducerDevice = (state, action) => {
           };
         case "sumGreyE":
           state.pcs[action.id - 1].sumGreyE = action.payload;  
+          return {
+            ...state
+          };
+        case "acInMax":
+          state.pcs[action.id - 1].acInMax = action.payload;  
           return {
             ...state
           };

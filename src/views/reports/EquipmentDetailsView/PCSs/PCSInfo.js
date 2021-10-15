@@ -5,6 +5,8 @@ import clsx from 'clsx';
 import {
   Box,
   Button,
+  Slider,
+  InputAdornment,
   IconButton,
   Checkbox,
   Grid,
@@ -18,6 +20,7 @@ import {
   Typography,
   makeStyles
 } from '@material-ui/core';
+import MuiInput from '@material-ui/core/Input';
 import BlockIcon from '@material-ui/icons/Block';
 import LockOpenIcon from '@material-ui/icons/LockOpenOutlined';
 import PersonIcon from '@material-ui/icons/PersonOutline';
@@ -27,8 +30,15 @@ const useStyles = makeStyles((theme) => ({
   root: {},
   fontWeightMedium: {
     fontWeight: theme.typography.fontWeightMedium
+  },
+  fontSize: {
+    fontSize: theme.typography.pxToRem(2)
   }
 }));
+
+// const Input = styled(MuiInput)`
+//   width: 42px;
+// `;
 
 const PCSInfo = ({
   equipment,
@@ -183,6 +193,7 @@ for (var i=0; i<8; i++) {
 }
 const [checked1, setChecked1] = React.useState(true);
 const [checked2, setChecked2] = React.useState(true);
+const [value, setValue] = React.useState(30);
 const con3Pub = {
   topic: "/BOFI/gaius/sp4k/1/con3/w",
   qos: 1,
@@ -198,6 +209,11 @@ const con4OffPub = {
   qos: 1,
   payload: "0"
 }
+const acInMaxPub = {
+  topic: "/BOFI/gaius/sp4k/1/acInMax/w",
+  qos: 1,
+  payload: "0"
+}
 const handleChange1 = (event) => {
   setChecked1(event.target.checked);
   publish(con3Pub);
@@ -208,6 +224,22 @@ const handleChange2 = (event) => {
     publish(con4OnPub);
   else
     publish(con4OffPub);
+};
+const handleSliderChange = (event, newValue) => {
+  setValue(newValue);
+};
+const handleInputChange = (event) => {
+  setValue(event.target.value === '' ? '' : Number(event.target.value));
+};
+const handleBlur = () => {
+  if (value < 0) {
+    setValue(0);
+  } else if (value > 80) {
+    setValue(80);
+  }
+  acInMaxPub.payload = value.toString();
+  publish(acInMaxPub);
+  // console.log(value);
 };
 
   return (
@@ -776,6 +808,57 @@ const handleChange2 = (event) => {
                     onChange={handleChange2}
                     inputProps={{ 'aria-label': 'controlled' }}
                   />
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell 
+                    className={classes.fontWeightMedium}
+                  >
+                  <Typography
+                      variant={classes.fontWeightMedium}
+                      // color="textSecondary"
+                      // color={controlColor[parseInt(equipment.con4)]}
+                    >
+                      {"AC輸入電流設定(A)"}
+                    </Typography>
+                    <Slider
+                      value={typeof value === 'number' ? value : 0}
+                      onChange={handleSliderChange}
+                      onBlur={handleBlur}
+                      max={80}
+                      aria-labelledby="input-slider"
+                      // valueLabelDisplay="auto"
+                    />
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="body2"
+                      // color="textSecondary"
+                      color={controlColor[parseInt(equipment.con4)]}
+                    >
+                      {equipment.acInMax}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography>
+                    <MuiInput
+                      value={value}
+                      // variant="filled"
+                      // size={classes.fontSize}
+                      // margin="dense"
+                      style={{ height: 20, width: 33 }}
+                      onChange={handleInputChange}
+                      onBlur={handleBlur}
+                      inputProps={{
+                        step: 1,
+                        min: 0,
+                        max: 80,
+                        type: 'number',
+                        'aria-labelledby': 'input-slider',
+                      }}
+                      // endAdornment={<InputAdornment position="end">A</InputAdornment>}
+                    />
+                    </Typography>
                   </TableCell>
                 </TableRow>
               </TableBody>
