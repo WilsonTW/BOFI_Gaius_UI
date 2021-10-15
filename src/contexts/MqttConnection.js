@@ -17,7 +17,7 @@ const Connection = ({ connect, disconnect }) => {
     .then(res => res.json())
     .then((json) => {
       // console.log(json.mqtt_hostname);
-      record.host = json.mqtt_hostname;
+      // record.host = json.mqtt_hostname;
       record.port = json.mqtt_port;
       // console.log("onFinish: " + record.host + " " + record.port);
       const url = `ws://${record.host}:${record.port}/mqtt`;
