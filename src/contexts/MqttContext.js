@@ -139,7 +139,7 @@ const device = {
 const pcsProfile = [
   "error0","error1","wMode","bV","bT","acInAcP","acOutV","acOutAcP","acOutF","acOutC","bCap","sInP1","bC","sInV1","maxT","acInToAcP",
   "acInC","sInC1","acOutAppP","acInV","acInF","acOutPP","innT","status0","status1","acOutToP","bP","totGenE","genEnH","genEnD","genEnM","genEnY","saveT",
-  "dateHourE","dateDayE","dateMonE","dateYearE","con1","con2","con3","con4","sysTime","greenPer","dayCount","lastGreenE","lastGreyE","sumGreenE","sumGreyE"
+  "dateHourE","dateDayE","dateMonE","dateYearE","con1","con2","con3","con4","sysTime","greenPer","dayCount","lastGreenE","lastGreyE","sumGreenE","sumGreyE","acInMax"
 ]; 
 const bmsProfile = [
   "vM","v1","v2","v3","v4","v5","v6","v7","v8","v9","v10","v11","v12","v13","v14","v15",
