@@ -132,7 +132,7 @@ const Power = ({ className, ...rest }) => {
             variant="body2"
             color="textPrimary"
           >
-            {dischargePower.label}&nbsp;&nbsp;
+            {dischargePower.label}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </Typography>
           <TextField 
             id="outlined-basic" 
