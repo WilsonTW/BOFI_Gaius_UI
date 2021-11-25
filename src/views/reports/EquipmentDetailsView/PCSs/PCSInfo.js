@@ -769,7 +769,8 @@ const handleBlur = () => {
                       // color="textSecondary"
                       color={controlColor[parseInt(equipment.con3)]}
                     >
-                      {equipment.con3}
+                      {/* {equipment.con3} */}
+                      {"--"}
                     </Typography>
                   </TableCell>
                   <TableCell>
